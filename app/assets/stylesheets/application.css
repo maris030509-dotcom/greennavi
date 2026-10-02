@@ -8,3 +8,12 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Zen Maru Gothic', 'Noto Sans JP', 'Yu Gothic UI', sans-serif;
+}
