@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  resources :users, only: [:edit, :update] do
+    collection do
+      get "my_page"
+      get "information"
+      get "information/edit", action: :edit
+      get "unsubscribe"
+      patch "withdraw"
+    end
+  end
+
+  devise_for :users, path: "users"
+  root "homes#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
