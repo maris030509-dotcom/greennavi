@@ -1,4 +1,19 @@
 class Park < ApplicationRecord
+  has_one_attached :park_image
+  def get_park_image(100, 100)
+    if park_image.attached?
+      park_image.variant(resize_to_limit:[100, 100]).processed
+    else
+      #デフォルト画像
+      "no_image.png"
+    end
+  end
+
   belongs_to :user
   belongs_to :prefecture
+
+  has_many :park_playgrounds
+  has_many :playgrounds, through: :park_playgrounds
+  has_many :park_equipments
+  has_many :equipments, through: :park_equipments
 end

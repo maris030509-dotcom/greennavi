@@ -1,0 +1,106 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+  <div class="card p-4 shadow-sm " style="width: 800px;" >
+    <h4>公園新規登録</h4>
+
+    <%= form_with model: [:admin, @park], local: true do |f| %>
+        <!-- 公園イメージ画像 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :image, "画像", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+      </div>
+
+      <!-- 公園名 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :name, "公園名", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.text_field :name, class: "form-control", placeholder: "公園名" %>
+        </div>
+      </div>
+
+      <!-- 公園紹介文 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :introduction, "公園紹介文", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.text_area :introduction, class: "form-control", placeholder: "ここに紹介文を記述します" %>
+        </div>
+      </div>
+
+      <!-- 都道府県 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :prefecture_id, "都道府県", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.collection_select :prefecture_id, @prefectures, :id, :name, { prompt: "選択してください"}, class: "form-control" %> 
+        </div>
+      </div>
+
+      <!-- 公園住所 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :address, "公園住所", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.text_area :address, class: "form-control", placeholder: "住所" %>
+        </div>
+      </div>
+
+      <!-- 公園設備 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :equipment_ids, "設備", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <% @equipments.each do |equipment| %>
+            <div class="form-check">
+              <%= check_box_tag "park[equipment_ids][]",
+                                equipment.id,
+                                @park.equipment_ids.include?(equipment.id),
+                                id: "equipment_#{equipment.id}",
+                                class: "form-check-input" %>
+
+              <%= label_tag "equipment_#{equipment.id}",
+                            equipment.name,
+                            class: "form-check-label" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- 公園遊具 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :playground_ids, "遊具", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <% @playgrounds.each do |playground| %>
+            <div class="form-check">
+              <%= check_box_tag "park[playground_ids][]",
+                                playground.id,
+                                @park.playground_ids.include?(playground.id),
+                                id: "playground_#{playground.id}",
+                                class: "form-check-input" %>
+
+              <%= label_tag "playground_#{playground.id}",
+                            playground.name,
+                            class: "form-check-label" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- 登録ボタン -->
+      <div class="text-center">
+        <%= f.submit "新規登録", class: "btn btn-success px-5 py-2 fw-bold" %>
+      </div>
+    <% end %>
+  </div>
+</div>

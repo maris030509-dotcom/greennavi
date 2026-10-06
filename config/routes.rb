@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :parks
 
   resources :users, only: [:edit, :update] do
     collection do
