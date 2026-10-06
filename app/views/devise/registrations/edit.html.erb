@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">会員情報編集</h2>
+
+  <%= form_with model: @customer, method: :patch, local: true do |f| %>
+    <!-- ユーザー名 -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">ユーザー名</label>
+      <div class="col-sm-10"><%= f.text_field :name, class: "form-control" %></div>
+    </div>
+
+    <!-- メールアドレス -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">メールアドレス</label>
+      <div class="col-sm-10"><%= f.email_field :email, class: "form-control" %></div>
+    </div>
+
+    <!-- 都道府県 
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">都道府県</label>
+      <div class="col-sm-10"><%= f.text_field :address, class: "form-control" %></div>
+    </div>　-->
+
+    <!-- 自己紹介文 -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">自己紹介文</label>
+      <div class="col-sm-10"><%= f.text_field :introduction, class: "form-control" %></div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <%= f.submit "編集内容を保存", class: "btn btn-success me-3" %>
+      <%= link_to "退会する", unsubscribe_users_path, class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>
