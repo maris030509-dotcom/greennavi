@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h3 class="mb-4">
+    🌿公園一覧🌿（全<%= @parks.count %>件）
+  </h3>
+
+  <div class="row">
+    <% @parks.each do |park| %>
+      <div class="col-md-3 mb-4">
+        <div class="card border-0">
+          <!-- 公園画像 -->
+          <%= link_to park_path(park) do %>
+            <% if park.park_image.attached? %>
+              <%= image_tag park.park_image, class: "card-img-top", alt: park.name %>
+            <% else %>
+              <%= image_tag "no_image.png", class: "card-img-top", alt: park.name %>
+            <% end %>
+          <% end %>
+
+          <!-- 公園情報 -->
+          <div class="card-body text-center">
+            <p>🌿<%= park.name %></p>
+            <p><%= park.prefecture.name %></p>
+            <p><%= park.address %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

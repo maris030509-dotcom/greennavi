@@ -64,3 +64,39 @@ User.create!(
   introduction: "よろしくお願いします。",
   is_active: true
 )
+
+[
+  "大型遊具",
+  "芝生",
+  "ボール遊び",
+  "トイレ",
+  "ドッグラン",
+  "売店",
+  "キッチンカー",
+  "自動販売機"
+].each do |equipment_name|
+  Equipment.find_or_create_by!(name: equipment_name)
+end
+
+[
+  "すべり台",
+  "ブランコ",
+  "ジャングルジム",
+  "砂場",
+  "シーソー",
+  "鉄棒",
+  "スプリング遊具",
+  "アスレチック",
+  "健康遊具"
+].each do |playground_name|
+  Playground.find_or_create_by!(name: playground_name)
+end
+
+
+User.find_or_create_by!(email: "example@example.com") do |user|
+  user.name = "test"
+  user.password = "password"
+  user.prefecture_id = 1
+  user.introduction = "よろしくお願いします。"
+  user.is_active = true
+end

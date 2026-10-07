@@ -1,4 +1,4 @@
-<div class="hero-section d-flex justify-content-center align-items-center" style="height: 400px; position: relative;">
+<div class="hero-section d-flex justify-content-center align-items-center" style="height: 300px; position: relative;">
   <!-- 背景レイヤー -->
   <div class="hero-background"
        style="width: 80%; height: 100%;
@@ -11,30 +11,64 @@
 
   <!-- テキスト部分 -->
   <div class="hero-content position-absolute text-center"
-       style="width: 80%; color: #2e7d32;">
-    <h2>みんなでつくる、みんなの公園情報サイト</h2>
-    <p>”お気に入りの公園”を見つけよう</p>
-  </div>
+     style="width: 80%; color: #2e7d32; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <img src="<%= asset_path 'title.png' %>" alt="GreenNaviロゴ"
+       style="width: 300px; margin-bottom: 16px;">
+  <h4>みんなでつくる、みんなの公園情報サイト</h4>
+  <h6>”お気に入りの公園”を見つけよう</h6>
 </div>
 
+</div>
 
-<section class="usage-section text-center mt-5">
-  <h2>ーサイトの使い方ー</h2>
-  <div class="d-flex justify-content-center flex-wrap mt-4">
-    <div class="usage-item mx-3">
-      <i class="fa-solid fa-magnifying-glass-location fa-2x text-success"></i>
-      <h3>公園を検索</h3>
+<section class="how-to-section text-center py-4">
+  <h3 class="mb-4">ー🌿サイトの使い方🌿ー</h3>
+
+  <div class="d-flex justify-content-center flex-wrap gap-4">
+
+    <div class="card step-card p-3">
+      <div class="card-body">
+        <i class="fa-solid fa-magnifying-glass-location fa-2x text-success mb-3"></i>
+        <p class="card-text">公園を検索してみよう</p>
+      </div>
     </div>
-    <div class="usage-item mx-3">
-      <i class="fa-solid fa-pen-to-square fa-2x text-success"></i>
-      <h3>情報を更新</h3>
+
+    <div class="card step-card p-3">
+      <div class="card-body">
+        <i class="fa-solid fa-photo-film fa-2x text-success mb-3"></i>
+        <p class="card-text">写真や設備をチェック</p>
+      </div>
     </div>
-    <div class="usage-item mx-3">
-      <i class="fa-solid fa-comments fa-2x text-success"></i>
-      <h3>情報を交換</h3>
+
+    <div class="card step-card p-3">
+      <div class="card-body">
+        <i class="fa-solid fa-comments fa-2x text-success mb-3"></i>
+        <p class="card-text">あなたの情報も投稿しよう</p>
+      </div>
     </div>
+
   </div>
 </section>
 
-<h2>ー新着の公園ー</h2>
-
+<div class="container my-5">
+  <h3 class="mb-4">-🌿新着公園🌿- <%= link_to "すべて見る", parks_path, class: "btn btn-outline-success" %></h3>
+  <div class="row">
+    <% @parks.first(4).each do |park| %>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <%= link_to park_path(park) do %>
+            <% if park.park_image.attached? %>
+              <%= image_tag park.park_image, class: "card-img-top", alt: park.name %>
+            <% else %>
+              <%= image_tag "no_image.png", class: "card-img-top", alt: park.name %>
+            <% end %>
+          <% end %>
+          <div class="card-body text-center">
+            <h5 class="card-title">🌿<%= park.name %></h5>
+            <p class="card-details"><%= park.prefecture.name %></p>
+            <p class="card-details"><%= park.address %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>    
+</div>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def my_page
     @user = current_user
+    @parks = Park.all
   end
 
   def edit
