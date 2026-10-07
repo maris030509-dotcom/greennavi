@@ -1,6 +1,6 @@
 <div class="container mt-5">
-  <h3 class="fw-bold mb-4">
-    公園一覧（全<%= @parks.count %>件）
+  <h3 class="mb-4">
+    🌿公園一覧🌿（全<%= @parks.count %>件）
   </h3>
 
   <div class="row">
@@ -9,13 +9,18 @@
         <div class="card border-0">
           <!-- 公園画像 -->
           <%= link_to park_path(park) do %>
-            <%= image_tag park.image, class: "card-img-top", alt: park.name %>
+            <% if park.park_image.attached? %>
+              <%= image_tag park.park_image, class: "card-img-top", alt: park.name %>
+            <% else %>
+              <%= image_tag "no_image.png", class: "card-img-top", alt: park.name %>
+            <% end %>
           <% end %>
 
           <!-- 公園情報 -->
           <div class="card-body text-center">
-            <h6 class="fw-bold"><%= park.name %></h6>
-
+            <p>🌿<%= park.name %></p>
+            <p><%= park.prefecture.name %></p>
+            <p><%= park.address %></p>
           </div>
         </div>
       </div>

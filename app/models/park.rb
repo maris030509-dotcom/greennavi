@@ -1,8 +1,8 @@
 class Park < ApplicationRecord
   has_one_attached :park_image
-  def get_park_image(100, 100)
+  def get_park_image(width, height)
     if park_image.attached?
-      park_image.variant(resize_to_limit:[100, 100]).processed
+      park_image.variant(resize_to_limit:[width, height]).processed
     else
       #デフォルト画像
       "no_image.png"

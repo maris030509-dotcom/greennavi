@@ -15,8 +15,13 @@
   box-sizing: border-box;
 }
 
+header {
+  background-color: #dff7e8;
+}
+
 body {
-  font-family: 'M PLUS 1', sans-serif !important;
+  font-family: 'Kosugi Maru', sans-serif !important;
+  background-color: #fff9e6 !important;
 }
 
 
@@ -33,17 +38,17 @@ body {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
-.usage-section {
-  background-color: #f9fbe7;
-  padding: 40px 0;
-  border-radius: 8px;
+.card.step-card {
+  width: 260px;
+  border-radius: 16px;
+  border: 2px solid #a5d6a7; 
+  background-color: #e3f6e3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+  transition: 0.3s;
 }
 
-.usage-item {
-  width: 180px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 10px;
+.card-text {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 16px;
+  color: #2e7d32;
 }

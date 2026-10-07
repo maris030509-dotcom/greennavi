@@ -4,16 +4,20 @@
 
     <!-- 左：公園画像 -->
     <div class="col-md-4">
-      <%= image_tag @park.image, class: "item-detail-img" %>
+      <% if @park.park_image.attached? %>
+        <%= image_tag @park.park_image, class: "card-img-top", alt: @park.name %>
+      <% else %>
+        <%= image_tag "no_image.png", class: "card-img-top", alt: @park.name %>
+      <% end %>
     </div>
 
     <!-- 右：公園情報 -->
     <div class="col-md-8">
       <!-- 公園名 -->
-      <h4 class="mb-2"><%= @park.name %></h4>
+      <h4 class="mb-2">🌿<%= @park.name %></h4>
 
       <!-- 都道府県 -->
-      <p class="mb-2"><%= @park.prefecture %></p>
+      <p class="mb-2"><%= @park.prefecture.name %></p>
       
       <!-- 公園紹介文 -->
       <p class="mb-2"><%= @park.introduction %></p>
@@ -22,14 +26,14 @@
       <p class="mb-2"><%= @park.address %></p>
 
       <!-- 公園設備 -->
-      <p class="mb-2">
+      <p class="mb-2">設備：
         <% @park.equipments.each do |equipment| %>
           <span class="badge bg-success me-1"><%= equipment.name %></span>
         <% end %>
       </p>
 
       <!-- 公園遊具 -->
-      <p class="mb-2">
+      <p class="mb-2">遊具：
         <% @park.playgrounds.each do |playground| %>
           <span class="badge bg-success me-1"><%= playground.name %></span>
         <% end %>

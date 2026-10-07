@@ -16,9 +16,14 @@ class ParksController < ApplicationController
 
   def create
     @park = Park.new(park_params)
+    @park.user = current_user
+    @prefectures = Prefecture.all
+    @equipments = Equipment.all
+    @playgrounds = Playground.all
     if @park.save
       redirect_to park_path(@park), notice:"投稿完了しました"
     else
+      flash.now[:alert] = "入力内容に誤りがあります"
       render :new, status: :unprocessable_entity
     end
   end
@@ -44,7 +49,7 @@ class ParksController < ApplicationController
     params.require(:park).permit(
       :park_image, :name, :introduction, 
       :prefecture_id, :address, 
-      :equipment_ids: [], :playground_ids: []
+      equipment_ids: [], playground_ids: []
       )
   end
 

@@ -2,14 +2,14 @@
   <div class="card p-4 shadow-sm " style="width: 800px;" >
     <h4>公園新規登録</h4>
 
-    <%= form_with model: [:admin, @park], local: true do |f| %>
+    <%= form_with model: @park, multipart: true do |f| %>
         <!-- 公園イメージ画像 -->
       <div class="row mb-3">
         <div class="col-2 d-flex align-items-center">
-          <%= f.label :image, "画像", class: "form-label mb-0" %>
+          <%= f.label :park_image, "画像", class: "form-label mb-0" %>
         </div>
         <div class="col-10">
-          <%= f.file_field :image, class: "form-control" %>
+          <%= f.file_field :park_image, class: "form-control" %>
         </div>
       </div>
 
