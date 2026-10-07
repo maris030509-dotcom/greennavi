@@ -56,6 +56,15 @@ Prefecture.create!(name: "宮崎県")
 Prefecture.create!(name: "鹿児島県")
 Prefecture.create!(name: "沖縄県")
 
+User.create!(
+  name: "test",
+  email: "example@example.com",
+  password: "password",
+  prefecture_id: "1",
+  introduction: "よろしくお願いします。",
+  is_active: true
+)
+
 [
   "大型遊具",
   "芝生",
