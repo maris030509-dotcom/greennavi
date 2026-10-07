@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :parks
+
+  resources :users, only: [:edit, :update] do
+    collection do
+      get "my_page"
+      get "information"
+      get "information/edit", action: :edit
+      get "unsubscribe"
+      patch "withdraw"
+    end
+  end
+
+  devise_for :users, path: "users"
   root "homes#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
