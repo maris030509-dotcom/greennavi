@@ -2,8 +2,22 @@
   <div class="card p-4 shadow-sm " style="width: 800px;" >
     <h4>新規ユーザー登録</h4>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <!-- ユーザー名 -->
+    <%= form_for(resource, 
+             as: resource_name, 
+             url: registration_path(resource_name), 
+             html: { data: { turbo: false } }) do |f| %>
+　　　<!-- バリデーションエラーメッセージ-->
+      <% if resource.errors.any? %>
+        <div class="error-messages">
+          <h4><%= resource.errors.count %>件のエラーがあります</h4>
+          <ul>
+            <% resource.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>  
+      <!-- ユーザー名 -->
       <div class="row mb-3">
         <div class="col-2 d-flex align-items-center">
           <label class="form-label mb-0">ユーザー名</label>
@@ -49,7 +63,7 @@
           <label class="form-label mb-0">都道府県</label>
         </div>
         <div class="col-10">
-          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください" %>
         </div>
       </div>
 

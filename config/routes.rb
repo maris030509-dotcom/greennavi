@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users, path: "users"
+  devise_for :users, path: "users", controllers: {
+    registrations: "users/registrations"
+  }
   root "homes#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
