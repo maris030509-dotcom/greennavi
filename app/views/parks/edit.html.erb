@@ -2,7 +2,18 @@
   <div class="card p-4 shadow-sm " style="width: 800px;" >
     <h4>公園情報編集</h4>
 
-    <%= form_with model: [:admin, @park] do |f| %>
+    <%= form_with model: @park, method: :patch, local: true do |f| %>
+      <!-- バリデーションメッセージ-->  
+      <% if @park.errors.any? %>
+        <div class="error-messages">
+          <h4><%= @park.errors.count %>件のエラーがあります</h4>
+          <ul>
+            <% @park.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
         <!-- 公園イメージ画像 -->
       <div class="row mb-3">
         <div class="col-2 d-flex align-items-center">

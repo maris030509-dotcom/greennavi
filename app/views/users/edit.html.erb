@@ -1,7 +1,18 @@
 <div class="container mt-5">
-  <h2 class="text-center mb-4">会員情報編集</h2>
+  <h2 class="text-center mb-4">ユーザー情報編集</h2>
 
-  <%= form_with model: @customer, method: :patch, local: true do |f| %>
+  <%= form_with model: @user, method: :patch, local: true do |f| %>
+    <!-- バリデーションメッセージ-->  
+    <% if @user.errors.any? %>
+      <div class="error-messages">
+        <h4><%= @user.errors.count %>件のエラーがあります</h4>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
     <!-- ユーザー名 -->
     <div class="mb-3 row">
       <label class="col-sm-2 col-form-label">ユーザー名</label>
@@ -17,7 +28,9 @@
     <!-- 都道府県 -->
     <div class="mb-3 row">
       <label class="col-sm-2 col-form-label">都道府県</label>
-      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+      <div class="col-sm-10">
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, class: "form-select" %>
+      </div>
     </div> 
 
     <!-- 自己紹介文 -->

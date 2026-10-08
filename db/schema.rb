@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_06_053644) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_07_070710) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,8 +46,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_06_053644) do
   end
 
   create_table "park_equipments", force: :cascade do |t|
-    t.integer "park_id", null: false
-    t.integer "equipment_id", null: false
+    t.bigint "park_id"
+    t.bigint "equipment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["equipment_id"], name: "index_park_equipments_on_equipment_id"
@@ -55,8 +55,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_06_053644) do
   end
 
   create_table "park_playgrounds", force: :cascade do |t|
-    t.integer "park_id", null: false
-    t.integer "playground_id", null: false
+    t.bigint "park_id"
+    t.bigint "playground_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["park_id"], name: "index_park_playgrounds_on_park_id"
@@ -64,8 +64,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_06_053644) do
   end
 
   create_table "parks", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "prefecture_id", null: false
+    t.bigint "user_id"
+    t.bigint "prefecture_id"
     t.string "name"
     t.text "introduction"
     t.string "address"

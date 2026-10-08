@@ -21,6 +21,12 @@
             <p>🌿<%= park.name %></p>
             <p><%= park.prefecture.name %></p>
             <p><%= park.address %></p>
+
+            <!--ログインしている人だけ編集可能 -->
+            <% if user_signed_in? %>
+              <%= link_to "編集する", edit_park_path(park), class: "btn btn-success btn-sm mt-2" %>
+            <% end %>
+
           </div>
         </div>
       </div>
