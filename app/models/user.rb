@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   belongs_to :prefecture, optional: true
+<<<<<<< HEAD
 
   def active_for_authentication?
     super && is_active?
@@ -14,6 +15,9 @@ class User < ApplicationRecord
     is_active? ? super : :inactive_account
   end
 
+=======
+  
+>>>>>>> origin/main
   validates :name, presence: true
   validates :prefecture_id, presence: true
 end

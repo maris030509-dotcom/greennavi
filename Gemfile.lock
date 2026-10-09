@@ -405,7 +405,11 @@ DEPENDENCIES
   jbuilder
   json (~> 2.7)
   kamal
+<<<<<<< HEAD
   mysql2
+=======
+  mysql2 (~> 0.5)
+>>>>>>> origin/main
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.5, >= 8.0.5.1)
