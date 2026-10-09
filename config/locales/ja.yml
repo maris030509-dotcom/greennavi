@@ -1,7 +1,11 @@
 ja:
+  devise:
+    failure:
+      inactive_account: "このアカウントは退会済みです。"
   activerecord:
     models:
       user: ユーザー
+      park: 公園
     attributes:
       user:
         name: ユーザー名
@@ -10,13 +14,20 @@ ja:
         password_confirmation: パスワード（確認）
         prefecture_id: 都道府県
         introduction: 自己紹介
+      park:
+        name: 公園名
+        introduction: 紹介文
+        prefecture: 都道府県
+        prefecture_id: 都道府県
+        address: 公園住所
+        park_image: 公園画像
 
-  errors:
-    messages:
-      record_invalid: 'バリデーションに失敗しました: %{errors}'
-      restrict_dependent_destroy:
-        has_one: "%{record}が存在しているので削除できません"
-        has_many: "%{record}が存在しているので削除できません"
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
   date:
     abbr_day_names:
     - 日
@@ -53,6 +64,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
+    - 
     - 1月
     - 2月
     - 3月

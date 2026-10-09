@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
@@ -6,12 +7,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if resource.save
       sign_up(resource_name, resource)
-      redirect_to root_path
+      respond_with resource, location: after_sign_up_path_for(resource)
     else
       clean_up_passwords(resource)
       set_minimum_password_length
       respond_with(resource)
     end
+  end
+
+  protected
+
+  def after_sign_up_path_for(resource)
+    my_page_users_path   # マイページへ遷移
   end
   # GET /resource/sign_up
   # def new

@@ -1,4 +1,5 @@
 class ParksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @parks = Park.all
   end
@@ -37,6 +38,9 @@ class ParksController < ApplicationController
 
   def update
     @park = Park.find(params[:id])
+    @prefectures = Prefecture.all
+    @equipments = Equipment.all
+    @playgrounds = Playground.all
     if @park.update(park_params)
       redirect_to park_path(@park), notice:"更新しました"
     else
