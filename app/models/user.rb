@@ -6,9 +6,6 @@ class User < ApplicationRecord
   
   belongs_to :prefecture, optional: true
 
-  validates :name, presence: true
-  validates :prefecture_id, presence: true
-
   def active_for_authentication?
     super && is_active?
   end
@@ -17,4 +14,6 @@ class User < ApplicationRecord
     is_active? ? super : :inactive_account
   end
 
+  validates :name, presence: true
+  validates :prefecture_id, presence: true
 end
