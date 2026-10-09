@@ -13,7 +13,7 @@ class User < ApplicationRecord
   def inactive_message
     is_active? ? super : :inactive_account
   end
-  
+
   validates :name, presence: true
   validates :prefecture_id, presence: true
 end
