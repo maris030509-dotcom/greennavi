@@ -48,6 +48,12 @@ class ParksController < ApplicationController
     end
   end
   
+  def destroy
+    @park = Park.find(params[:id])
+    @park.destroy
+    redirect_to my_page_users_path, notice: "削除しました"
+  end
+
   private
   def park_params
     params.require(:park).permit(

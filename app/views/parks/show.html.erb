@@ -42,6 +42,10 @@
       <!--ログインしている人だけ編集可能 -->
       <% if user_signed_in? %>
         <%= link_to "編集する", edit_park_path(@park), class: "btn btn-success btn-sm mt-2" %>
+        <%= button_to "削除する", park_path(@park),
+          method: :delete,
+          data: { turbo_confirm: "本当に削除しますか？" },
+          class: "btn btn-danger btn-sm mt-2" %>
       <% end %>
 
     </div>
