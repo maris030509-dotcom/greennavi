@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> 54fec2a4de2fae36505ac2cb1a943dddacefa094
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
@@ -8,19 +11,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if resource.save
       sign_up(resource_name, resource)
+<<<<<<< HEAD
       respond_with resource, location: after_sign_up_path_for(resource)
+=======
+      redirect_to root_path
+>>>>>>> 54fec2a4de2fae36505ac2cb1a943dddacefa094
     else
       clean_up_passwords(resource)
       set_minimum_password_length
       respond_with(resource)
     end
   end
+<<<<<<< HEAD
 
   protected
 
   def after_sign_up_path_for(resource)
     my_page_users_path   # マイページへ遷移
   end
+=======
+>>>>>>> 54fec2a4de2fae36505ac2cb1a943dddacefa094
   # GET /resource/sign_up
   # def new
   #   super
