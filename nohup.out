@@ -1,0 +1,571 @@
+Puma starting in single mode...
+* Puma version: 8.0.2 ("Into the Arena")
+* Ruby version: ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [x86_64-linux]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: production
+*          PID: 90584
+[dotenv] Loaded [33m.env[0m
+* Listening on unix:///home/ubuntu/greennavi/tmp/sockets/puma.sock
+Use Ctrl-C to stop
+[ec09f52c-3e84-467c-bbd8-6dfbd310032e] Started GET "/" for 219.104.165.137 at 2026-10-09 04:56:08 +0000
+[ec09f52c-3e84-467c-bbd8-6dfbd310032e] Processing by HomesController#about as HTML
+[ec09f52c-3e84-467c-bbd8-6dfbd310032e]   Rendered layout layouts/application.html.erb (Duration: 120.5ms | GC: 9.1ms)
+[ec09f52c-3e84-467c-bbd8-6dfbd310032e] Completed 200 OK in 143ms (Views: 62.4ms | ActiveRecord: 59.9ms (7 queries, 0 cached) | GC: 9.1ms)
+[e4a2ecaa-c58f-488b-9fe5-8b1de75777d3] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 04:56:09 +0000
+[e4a2ecaa-c58f-488b-9fe5-8b1de75777d3] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+[e4a2ecaa-c58f-488b-9fe5-8b1de75777d3]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23", "filename"=>"Osaka_central_park"}
+[e4a2ecaa-c58f-488b-9fe5-8b1de75777d3] Redirected to http://13.230.40.246/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjAxOjA5LjAyNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--44fc188ba87e1fe0c3db71d2c7879c1832b96ad4/Osaka_central_park.png
+[e4a2ecaa-c58f-488b-9fe5-8b1de75777d3] Completed 302 Found in 4ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+[00156b9d-47ed-4dc9-a0ac-68ca42e9f2b3] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjAxOjA5LjAyNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--44fc188ba87e1fe0c3db71d2c7879c1832b96ad4/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 04:56:09 +0000
+[00156b9d-47ed-4dc9-a0ac-68ca42e9f2b3] Processing by ActiveStorage::DiskController#show as PNG
+[00156b9d-47ed-4dc9-a0ac-68ca42e9f2b3]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[00156b9d-47ed-4dc9-a0ac-68ca42e9f2b3] Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cdda94bc-227c-4b0b-a7ec-23ce3c9e9b35] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 04:56:13 +0000
+[cdda94bc-227c-4b0b-a7ec-23ce3c9e9b35] Processing by ParksController#show as HTML
+[cdda94bc-227c-4b0b-a7ec-23ce3c9e9b35]   Parameters: {"id"=>"2"}
+[cdda94bc-227c-4b0b-a7ec-23ce3c9e9b35]   Rendered layout layouts/application.html.erb (Duration: 27.9ms | GC: 0.2ms)
+[cdda94bc-227c-4b0b-a7ec-23ce3c9e9b35] Completed 200 OK in 31ms (Views: 18.2ms | ActiveRecord: 11.1ms (7 queries, 0 cached) | GC: 0.2ms)
+[3489dff6-fe0a-4962-ac17-f0c8c693a53a] Started DELETE "/users/sign_out?_method=delete" for 219.104.165.137 at 2026-10-09 04:56:20 +0000
+[3489dff6-fe0a-4962-ac17-f0c8c693a53a] Processing by Devise::SessionsController#destroy as TURBO_STREAM
+[3489dff6-fe0a-4962-ac17-f0c8c693a53a] Redirected to http://13.230.40.246/
+[3489dff6-fe0a-4962-ac17-f0c8c693a53a] Completed 303 See Other in 8ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[8318505c-8ade-4106-8c30-18ee86150892] Started GET "/" for 219.104.165.137 at 2026-10-09 04:56:20 +0000
+[8318505c-8ade-4106-8c30-18ee86150892] Processing by HomesController#about as TURBO_STREAM
+[8318505c-8ade-4106-8c30-18ee86150892]   Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.2ms)
+[8318505c-8ade-4106-8c30-18ee86150892] Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 2.0ms (6 queries, 0 cached) | GC: 0.2ms)
+[aa020f45-5ca5-427a-8e1e-166428523afe] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 04:56:20 +0000
+[aa020f45-5ca5-427a-8e1e-166428523afe] Processing by Devise::SessionsController#new as HTML
+[aa020f45-5ca5-427a-8e1e-166428523afe]   Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+[aa020f45-5ca5-427a-8e1e-166428523afe] Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d0dcc162-2496-4d5b-8ed1-4d5c9cb61b73] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 04:56:22 +0000
+[d0dcc162-2496-4d5b-8ed1-4d5c9cb61b73] Processing by Devise::SessionsController#new as HTML
+[d0dcc162-2496-4d5b-8ed1-4d5c9cb61b73]   Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+[d0dcc162-2496-4d5b-8ed1-4d5c9cb61b73] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+[91031fce-0e01-48a6-a509-74c01f63e7ef] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 04:56:28 +0000
+[91031fce-0e01-48a6-a509-74c01f63e7ef] Processing by Devise::SessionsController#create as TURBO_STREAM
+[91031fce-0e01-48a6-a509-74c01f63e7ef]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[91031fce-0e01-48a6-a509-74c01f63e7ef] Redirected to http://13.230.40.246/users/my_page
+[91031fce-0e01-48a6-a509-74c01f63e7ef] Completed 303 See Other in 283ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.9ms)
+[46d8634d-d209-4698-a7c3-7138eedf63ee] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 04:56:29 +0000
+[46d8634d-d209-4698-a7c3-7138eedf63ee] Processing by UsersController#my_page as TURBO_STREAM
+[46d8634d-d209-4698-a7c3-7138eedf63ee]   Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.0ms)
+[46d8634d-d209-4698-a7c3-7138eedf63ee] Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 3.0ms (8 queries, 0 cached) | GC: 0.0ms)
+[095b1028-3c48-4066-a2db-17c2b82bf833] Started GET "/parks/1" for 219.104.165.137 at 2026-10-09 04:56:35 +0000
+[095b1028-3c48-4066-a2db-17c2b82bf833] Processing by ParksController#show as HTML
+[095b1028-3c48-4066-a2db-17c2b82bf833]   Parameters: {"id"=>"1"}
+[095b1028-3c48-4066-a2db-17c2b82bf833]   Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+[095b1028-3c48-4066-a2db-17c2b82bf833] Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 2.3ms (6 queries, 0 cached) | GC: 0.0ms)
+[64f6f1c4-b4d1-443d-8b35-7d55a06201c8] Started GET "/parks/new" for 219.104.165.137 at 2026-10-09 04:56:43 +0000
+[64f6f1c4-b4d1-443d-8b35-7d55a06201c8] Processing by ParksController#new as HTML
+[64f6f1c4-b4d1-443d-8b35-7d55a06201c8]   Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+[64f6f1c4-b4d1-443d-8b35-7d55a06201c8] Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.0ms)
+[9e82465e-28a4-4bb1-a0dd-ac86c91e20bb] Started POST "/parks" for 219.104.165.137 at 2026-10-09 04:57:50 +0000
+[9e82465e-28a4-4bb1-a0dd-ac86c91e20bb] Processing by ParksController#create as TURBO_STREAM
+[9e82465e-28a4-4bb1-a0dd-ac86c91e20bb]   Parameters: {"authenticity_token"=>"[FILTERED]", "park"=>{"name"=>"神戸南公園", "introduction"=>"海に近くて解放感のある公園です。", "prefecture_id"=>"28", "address"=>"兵庫県神戸市中央区テスト町1-2-3", "equipment_ids"=>["2", "4", "6", "7", "8"], "playground_ids"=>["9"]}, "commit"=>"新規登録"}
+[9e82465e-28a4-4bb1-a0dd-ac86c91e20bb] Redirected to http://13.230.40.246/parks/3
+[9e82465e-28a4-4bb1-a0dd-ac86c91e20bb] Completed 302 Found in 56ms (ActiveRecord: 20.1ms (16 queries, 0 cached) | GC: 12.9ms)
+[cd901a8f-3800-48ff-a278-e9e2a4714626] Started GET "/parks/3" for 219.104.165.137 at 2026-10-09 04:57:50 +0000
+[cd901a8f-3800-48ff-a278-e9e2a4714626] Processing by ParksController#show as TURBO_STREAM
+[cd901a8f-3800-48ff-a278-e9e2a4714626]   Parameters: {"id"=>"3"}
+[cd901a8f-3800-48ff-a278-e9e2a4714626]   Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.3ms)
+[cd901a8f-3800-48ff-a278-e9e2a4714626] Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 2.1ms (6 queries, 0 cached) | GC: 0.3ms)
+[4992edf7-02a6-4e10-add1-75fff91f1189] Started GET "/parks" for 219.104.165.137 at 2026-10-09 04:57:55 +0000
+[4992edf7-02a6-4e10-add1-75fff91f1189] Processing by ParksController#index as HTML
+[4992edf7-02a6-4e10-add1-75fff91f1189]   Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.2ms)
+[4992edf7-02a6-4e10-add1-75fff91f1189] Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 3.2ms (10 queries, 0 cached) | GC: 0.2ms)
+[c3708342-eb46-4311-b34c-1a895ab7bf2e] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 04:57:56 +0000
+[c3708342-eb46-4311-b34c-1a895ab7bf2e] Processing by UsersController#my_page as HTML
+[c3708342-eb46-4311-b34c-1a895ab7bf2e]   Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.2ms)
+[c3708342-eb46-4311-b34c-1a895ab7bf2e] Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 4.0ms (10 queries, 0 cached) | GC: 0.2ms)
+[e6a74312-f599-4f1c-8160-d08bb70b0122] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjAxOjA5LjAyNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--44fc188ba87e1fe0c3db71d2c7879c1832b96ad4/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 04:57:56 +0000
+[e6a74312-f599-4f1c-8160-d08bb70b0122] Processing by ActiveStorage::DiskController#show as PNG
+[e6a74312-f599-4f1c-8160-d08bb70b0122]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[e6a74312-f599-4f1c-8160-d08bb70b0122] Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d2c05dca-ed99-452a-851f-6672bb153b21] Started GET "/" for 219.104.165.137 at 2026-10-09 05:03:39 +0000
+[d2c05dca-ed99-452a-851f-6672bb153b21] Processing by HomesController#about as HTML
+[d2c05dca-ed99-452a-851f-6672bb153b21]   Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.0ms)
+[d2c05dca-ed99-452a-851f-6672bb153b21] Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 2.8ms (9 queries, 0 cached) | GC: 0.0ms)
+[e2f0d70f-a54c-4356-b967-8757efaf884e] Started GET "/" for 219.104.165.137 at 2026-10-09 05:03:42 +0000
+[e2f0d70f-a54c-4356-b967-8757efaf884e] Processing by HomesController#about as HTML
+[e2f0d70f-a54c-4356-b967-8757efaf884e]   Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.0ms)
+[e2f0d70f-a54c-4356-b967-8757efaf884e] Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 3.1ms (9 queries, 0 cached) | GC: 0.0ms)
+[8602ba97-3942-49c9-a2eb-5f14d1455f18] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:03:42 +0000
+[8602ba97-3942-49c9-a2eb-5f14d1455f18] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+[8602ba97-3942-49c9-a2eb-5f14d1455f18]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23", "filename"=>"Osaka_central_park"}
+[8602ba97-3942-49c9-a2eb-5f14d1455f18] Redirected to http://13.230.40.246/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjA4OjQyLjM0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--68bdbcb0e062a31aec54eff5b7126d427f158f9a/Osaka_central_park.png
+[8602ba97-3942-49c9-a2eb-5f14d1455f18] Completed 302 Found in 3ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+[257411fe-5f4c-4910-b2c2-23a3f08740ce] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjA4OjQyLjM0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--68bdbcb0e062a31aec54eff5b7126d427f158f9a/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:03:42 +0000
+[257411fe-5f4c-4910-b2c2-23a3f08740ce] Processing by ActiveStorage::DiskController#show as PNG
+[257411fe-5f4c-4910-b2c2-23a3f08740ce]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[257411fe-5f4c-4910-b2c2-23a3f08740ce] Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cd8ff6a6-90d4-4bf2-a2c6-97a200749ab1] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:03:44 +0000
+[cd8ff6a6-90d4-4bf2-a2c6-97a200749ab1] Processing by ParksController#show as HTML
+[cd8ff6a6-90d4-4bf2-a2c6-97a200749ab1]   Parameters: {"id"=>"2"}
+[cd8ff6a6-90d4-4bf2-a2c6-97a200749ab1]   Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+[cd8ff6a6-90d4-4bf2-a2c6-97a200749ab1] Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 2.8ms (7 queries, 0 cached) | GC: 0.0ms)
+- Gracefully stopping, waiting for requests to finish
+Puma starting in single mode...
+* Puma version: 8.0.2 ("Into the Arena")
+* Ruby version: ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [x86_64-linux]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: production
+*          PID: 91111
+[dotenv] Loaded [33m.env[0m
+* Listening on unix:///home/ubuntu/greennavi/tmp/sockets/puma.sock
+Use Ctrl-C to stop
+Puma starting in single mode...
+* Puma version: 8.0.2 ("Into the Arena")
+* Ruby version: ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [x86_64-linux]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: production
+*          PID: 91168
+[dotenv] Loaded [33m.env[0m
+bundler: failed to load command: puma (/home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/bin/puma)
+/home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/binder.rb:428:in `add_unix_listener': There is already a server bound to: /home/ubuntu/greennavi/tmp/sockets/puma.sock (RuntimeError)
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/binder.rb:222:in `block in parse'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/binder.rb:156:in `each'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/binder.rb:156:in `parse'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/runner.rb:166:in `load_and_bind'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/single.rb:44:in `run'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/launcher.rb:208:in `run'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/lib/puma/cli.rb:73:in `run'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/puma-8.0.2/bin/puma:10:in `<top (required)>'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/bin/puma:25:in `load'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/bin/puma:25:in `<top (required)>'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/cli/exec.rb:61:in `load'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/cli/exec.rb:61:in `kernel_load'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/cli/exec.rb:24:in `run'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/cli.rb:508:in `exec'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/vendor/thor/lib/thor.rb:538:in `dispatch'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/cli.rb:35:in `dispatch'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/cli.rb:29:in `start'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/lib/bundler/friendly_errors.rb:118:in `with_friendly_errors'
+	from /home/ubuntu/greennavi/vendor/bundle/ruby/3.3.0/gems/bundler-4.0.17/exe/bundle:20:in `<top (required)>'
+	from /home/ubuntu/.rbenv/versions/3.3.6/bin/bundle:25:in `load'
+	from /home/ubuntu/.rbenv/versions/3.3.6/bin/bundle:25:in `<main>'
+[3095b785-af77-4ec3-89c3-2ebc9228f25b] Started GET "/" for 219.104.165.137 at 2026-10-09 05:05:05 +0000
+[3095b785-af77-4ec3-89c3-2ebc9228f25b] Processing by HomesController#about as HTML
+[3095b785-af77-4ec3-89c3-2ebc9228f25b]   Rendered layout layouts/application.html.erb (Duration: 136.2ms | GC: 9.1ms)
+[3095b785-af77-4ec3-89c3-2ebc9228f25b] Completed 200 OK in 159ms (Views: 64.2ms | ActiveRecord: 73.8ms (9 queries, 0 cached) | GC: 9.1ms)
+[b88b1408-3b61-46ef-afa9-9d09ebfec4bb] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjA4OjQyLjM0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--68bdbcb0e062a31aec54eff5b7126d427f158f9a/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:05:05 +0000
+[b88b1408-3b61-46ef-afa9-9d09ebfec4bb] Processing by ActiveStorage::DiskController#show as PNG
+[b88b1408-3b61-46ef-afa9-9d09ebfec4bb]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[b88b1408-3b61-46ef-afa9-9d09ebfec4bb] Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c0054f4c-c921-4b0c-9ec5-8dbce42fc5f6] Started GET "/parks/3" for 219.104.165.137 at 2026-10-09 05:05:07 +0000
+[c0054f4c-c921-4b0c-9ec5-8dbce42fc5f6] Processing by ParksController#show as HTML
+[c0054f4c-c921-4b0c-9ec5-8dbce42fc5f6]   Parameters: {"id"=>"3"}
+[c0054f4c-c921-4b0c-9ec5-8dbce42fc5f6]   Rendered layout layouts/application.html.erb (Duration: 29.5ms | GC: 0.3ms)
+[c0054f4c-c921-4b0c-9ec5-8dbce42fc5f6] Completed 200 OK in 33ms (Views: 18.7ms | ActiveRecord: 11.9ms (6 queries, 0 cached) | GC: 0.3ms)
+[a0a945ec-3797-40d4-abc7-50ec36485598] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:05:08 +0000
+[a0a945ec-3797-40d4-abc7-50ec36485598] Processing by ParksController#show as HTML
+[a0a945ec-3797-40d4-abc7-50ec36485598]   Parameters: {"id"=>"2"}
+[a0a945ec-3797-40d4-abc7-50ec36485598]   Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.0ms)
+[a0a945ec-3797-40d4-abc7-50ec36485598] Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 5.3ms (7 queries, 0 cached) | GC: 0.1ms)
+[786aae06-7322-48de-badd-398d719a44dc] Started GET "/parks/2/edit" for 219.104.165.137 at 2026-10-09 05:06:20 +0000
+[786aae06-7322-48de-badd-398d719a44dc] Processing by ParksController#edit as HTML
+[786aae06-7322-48de-badd-398d719a44dc]   Parameters: {"id"=>"2"}
+[786aae06-7322-48de-badd-398d719a44dc]   Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.0ms)
+[786aae06-7322-48de-badd-398d719a44dc] Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 3.5ms (7 queries, 0 cached) | GC: 0.0ms)
+[b0a10704-d84c-4f68-9277-b05d2ba7a3a6] Started GET "/" for 219.104.165.137 at 2026-10-09 05:06:39 +0000
+[b0a10704-d84c-4f68-9277-b05d2ba7a3a6] Processing by HomesController#about as HTML
+[b0a10704-d84c-4f68-9277-b05d2ba7a3a6]   Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.8ms)
+[b0a10704-d84c-4f68-9277-b05d2ba7a3a6] Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 2.7ms (9 queries, 0 cached) | GC: 0.8ms)
+[96e45b58-5d36-43c9-87d2-c14c1da4e8d1] Started GET "/parks/3" for 219.104.165.137 at 2026-10-09 05:07:00 +0000
+[96e45b58-5d36-43c9-87d2-c14c1da4e8d1] Processing by ParksController#show as HTML
+[96e45b58-5d36-43c9-87d2-c14c1da4e8d1]   Parameters: {"id"=>"3"}
+[96e45b58-5d36-43c9-87d2-c14c1da4e8d1]   Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.7ms)
+[96e45b58-5d36-43c9-87d2-c14c1da4e8d1] Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 4.0ms (6 queries, 0 cached) | GC: 0.7ms)
+[9cf1ccac-d289-451c-a19a-02b7daf2dcd7] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:07:01 +0000
+[9cf1ccac-d289-451c-a19a-02b7daf2dcd7] Processing by ParksController#show as HTML
+[9cf1ccac-d289-451c-a19a-02b7daf2dcd7]   Parameters: {"id"=>"2"}
+[9cf1ccac-d289-451c-a19a-02b7daf2dcd7]   Rendered layout layouts/application.html.erb (Duration: 18.6ms | GC: 0.0ms)
+[9cf1ccac-d289-451c-a19a-02b7daf2dcd7] Completed 200 OK in 22ms (Views: 14.4ms | ActiveRecord: 5.3ms (7 queries, 0 cached) | GC: 0.0ms)
+[ea968c31-a62b-4dd3-a70d-0e50ef1ab914] Started GET "/parks" for 219.104.165.137 at 2026-10-09 05:07:09 +0000
+[ea968c31-a62b-4dd3-a70d-0e50ef1ab914] Processing by ParksController#index as HTML
+[ea968c31-a62b-4dd3-a70d-0e50ef1ab914]   Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.0ms)
+[ea968c31-a62b-4dd3-a70d-0e50ef1ab914] Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 7.4ms (10 queries, 0 cached) | GC: 0.0ms)
+[bda5f762-1ac8-4dce-ab3f-0cf89542d67f] Started GET "/parks/3" for 219.104.165.137 at 2026-10-09 05:07:09 +0000
+[bda5f762-1ac8-4dce-ab3f-0cf89542d67f] Processing by ParksController#show as HTML
+[bda5f762-1ac8-4dce-ab3f-0cf89542d67f]   Parameters: {"id"=>"3"}
+[bda5f762-1ac8-4dce-ab3f-0cf89542d67f]   Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+[bda5f762-1ac8-4dce-ab3f-0cf89542d67f] Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 2.5ms (6 queries, 0 cached) | GC: 0.0ms)
+[f0ebb191-c915-48b4-8e64-f39e92eddc76] Started DELETE "/parks/3" for 219.104.165.137 at 2026-10-09 05:07:13 +0000
+[f0ebb191-c915-48b4-8e64-f39e92eddc76] Processing by ParksController#destroy as TURBO_STREAM
+[f0ebb191-c915-48b4-8e64-f39e92eddc76]   Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+[f0ebb191-c915-48b4-8e64-f39e92eddc76] Redirected to http://13.230.40.246/users/my_page
+[f0ebb191-c915-48b4-8e64-f39e92eddc76] Completed 302 Found in 50ms (ActiveRecord: 22.6ms (14 queries, 0 cached) | GC: 10.8ms)
+[537ef1b3-93f9-41d9-8ab1-80361a6efef8] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:07:13 +0000
+[537ef1b3-93f9-41d9-8ab1-80361a6efef8] Processing by UsersController#my_page as TURBO_STREAM
+[537ef1b3-93f9-41d9-8ab1-80361a6efef8]   Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.0ms)
+[537ef1b3-93f9-41d9-8ab1-80361a6efef8] Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 2.8ms (8 queries, 0 cached) | GC: 0.4ms)
+[323c8c7d-3ade-4aea-9317-06e80df89d93] Started GET "/parks/1" for 219.104.165.137 at 2026-10-09 05:07:26 +0000
+[323c8c7d-3ade-4aea-9317-06e80df89d93] Processing by ParksController#show as HTML
+[323c8c7d-3ade-4aea-9317-06e80df89d93]   Parameters: {"id"=>"1"}
+[323c8c7d-3ade-4aea-9317-06e80df89d93]   Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+[323c8c7d-3ade-4aea-9317-06e80df89d93] Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 2.1ms (6 queries, 0 cached) | GC: 0.0ms)
+[05fcb73f-1cc1-4b9e-8608-3fd650a9f86d] Started GET "/parks/1/edit" for 219.104.165.137 at 2026-10-09 05:07:27 +0000
+[05fcb73f-1cc1-4b9e-8608-3fd650a9f86d] Processing by ParksController#edit as HTML
+[05fcb73f-1cc1-4b9e-8608-3fd650a9f86d]   Parameters: {"id"=>"1"}
+[05fcb73f-1cc1-4b9e-8608-3fd650a9f86d]   Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.2ms)
+[05fcb73f-1cc1-4b9e-8608-3fd650a9f86d] Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 2.4ms (7 queries, 0 cached) | GC: 0.5ms)
+[203014c7-525a-4ea4-8f77-1081fa92c66f] Started PATCH "/parks/1" for 219.104.165.137 at 2026-10-09 05:07:37 +0000
+[203014c7-525a-4ea4-8f77-1081fa92c66f] Processing by ParksController#update as TURBO_STREAM
+[203014c7-525a-4ea4-8f77-1081fa92c66f]   Parameters: {"authenticity_token"=>"[FILTERED]", "park"=>{"name"=>"", "introduction"=>"アクセスがよく、周辺に飲食店も充実しています。\r\n遊具も様々なものがあり、未就学児から小学生まで楽しめる公園です。", "prefecture_id"=>"26", "address"=>"京都市中京区テスト町1-2-3", "equipment_ids"=>["1", "2", "3", "4", "8"], "playground_ids"=>["1", "2", "3", "4", "5", "6", "7", "8"]}, "commit"=>"変更を保存", "id"=>"1"}
+[203014c7-525a-4ea4-8f77-1081fa92c66f]   Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.2ms)
+[203014c7-525a-4ea4-8f77-1081fa92c66f] Completed 422 Unprocessable Content in 19ms (Views: 8.9ms | ActiveRecord: 3.7ms (9 queries, 0 cached) | GC: 0.3ms)
+[8343e2a4-4dad-4357-aa90-6982c6eb8746] Started GET "/" for 219.104.165.137 at 2026-10-09 05:07:41 +0000
+[8343e2a4-4dad-4357-aa90-6982c6eb8746] Processing by HomesController#about as HTML
+[8343e2a4-4dad-4357-aa90-6982c6eb8746]   Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+[8343e2a4-4dad-4357-aa90-6982c6eb8746] Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 2.3ms (7 queries, 0 cached) | GC: 0.2ms)
+[986422ac-bbba-48a2-92e4-e44f3b263427] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjA4OjQyLjM0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--68bdbcb0e062a31aec54eff5b7126d427f158f9a/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:07:41 +0000
+[986422ac-bbba-48a2-92e4-e44f3b263427] Processing by ActiveStorage::DiskController#show as PNG
+[986422ac-bbba-48a2-92e4-e44f3b263427]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[986422ac-bbba-48a2-92e4-e44f3b263427] Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[620d19dc-2826-44d7-abee-d97441604312] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:07:51 +0000
+[620d19dc-2826-44d7-abee-d97441604312] Processing by UsersController#my_page as HTML
+[620d19dc-2826-44d7-abee-d97441604312]   Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.8ms)
+[620d19dc-2826-44d7-abee-d97441604312] Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 2.6ms (8 queries, 0 cached) | GC: 0.8ms)
+[7d985583-e0b7-4441-bf2c-19a503fb5bac] Started GET "/parks" for 219.104.165.137 at 2026-10-09 05:07:52 +0000
+[7d985583-e0b7-4441-bf2c-19a503fb5bac] Processing by ParksController#index as HTML
+[7d985583-e0b7-4441-bf2c-19a503fb5bac]   Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+[7d985583-e0b7-4441-bf2c-19a503fb5bac] Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 2.4ms (8 queries, 0 cached) | GC: 0.0ms)
+[d5f217ef-2c84-4bbf-97dc-3f1cd53bbd89] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:07:53 +0000
+[d5f217ef-2c84-4bbf-97dc-3f1cd53bbd89] Processing by ParksController#show as HTML
+[d5f217ef-2c84-4bbf-97dc-3f1cd53bbd89]   Parameters: {"id"=>"2"}
+[d5f217ef-2c84-4bbf-97dc-3f1cd53bbd89]   Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+[d5f217ef-2c84-4bbf-97dc-3f1cd53bbd89] Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 2.5ms (7 queries, 0 cached) | GC: 0.0ms)
+[84e13075-11b1-47d7-b747-224959cfd376] Started GET "/parks/1" for 219.104.165.137 at 2026-10-09 05:07:53 +0000
+[84e13075-11b1-47d7-b747-224959cfd376] Processing by ParksController#show as HTML
+[84e13075-11b1-47d7-b747-224959cfd376]   Parameters: {"id"=>"1"}
+[84e13075-11b1-47d7-b747-224959cfd376]   Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+[84e13075-11b1-47d7-b747-224959cfd376] Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 2.1ms (6 queries, 0 cached) | GC: 0.0ms)
+[1e273a5e-37ee-4d34-a572-46e7fa692d1e] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:07:54 +0000
+[1e273a5e-37ee-4d34-a572-46e7fa692d1e] Processing by ParksController#show as HTML
+[1e273a5e-37ee-4d34-a572-46e7fa692d1e]   Parameters: {"id"=>"2"}
+[1e273a5e-37ee-4d34-a572-46e7fa692d1e]   Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+[1e273a5e-37ee-4d34-a572-46e7fa692d1e] Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 2.5ms (7 queries, 0 cached) | GC: 0.0ms)
+[f24b13c6-c1b1-48f2-9fb2-b14cda1b8649] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:08:08 +0000
+[f24b13c6-c1b1-48f2-9fb2-b14cda1b8649] Processing by UsersController#my_page as HTML
+[f24b13c6-c1b1-48f2-9fb2-b14cda1b8649]   Rendered layout layouts/application.html.erb (Duration: 20.7ms | GC: 11.1ms)
+[f24b13c6-c1b1-48f2-9fb2-b14cda1b8649] Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 3.1ms (8 queries, 0 cached) | GC: 11.1ms)
+[ee128fe8-4f96-42cf-80dd-8439d9730c42] Started GET "/users/information/edit" for 219.104.165.137 at 2026-10-09 05:08:09 +0000
+[ee128fe8-4f96-42cf-80dd-8439d9730c42] Processing by UsersController#edit as HTML
+[ee128fe8-4f96-42cf-80dd-8439d9730c42]   Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+[ee128fe8-4f96-42cf-80dd-8439d9730c42] Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.5ms)
+[25d305c3-bff4-42b6-ad99-b6290382bd91] Started PATCH "/users/1" for 219.104.165.137 at 2026-10-09 05:08:34 +0000
+[25d305c3-bff4-42b6-ad99-b6290382bd91] Processing by UsersController#update as TURBO_STREAM
+[25d305c3-bff4-42b6-ad99-b6290382bd91]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"[FILTERED]", "prefecture_id"=>"1", "introduction"=>"よろしくお願いします。"}, "commit"=>"編集内容を保存", "id"=>"1"}
+[25d305c3-bff4-42b6-ad99-b6290382bd91]   Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.3ms)
+[25d305c3-bff4-42b6-ad99-b6290382bd91] Completed 422 Unprocessable Content in 8ms (Views: 4.6ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.3ms)
+[e0620d72-5d27-4c60-a92c-c8bcebb5fc27] Started PATCH "/users/1" for 219.104.165.137 at 2026-10-09 05:09:00 +0000
+[e0620d72-5d27-4c60-a92c-c8bcebb5fc27] Processing by UsersController#update as TURBO_STREAM
+[e0620d72-5d27-4c60-a92c-c8bcebb5fc27]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"test", "email"=>"[FILTERED]", "prefecture_id"=>"1", "introduction"=>"よろしくお願いします。"}, "commit"=>"編集内容を保存", "id"=>"1"}
+[e0620d72-5d27-4c60-a92c-c8bcebb5fc27] Redirected to http://13.230.40.246/users/1
+[e0620d72-5d27-4c60-a92c-c8bcebb5fc27] Completed 302 Found in 3ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[6103d269-950c-4f3f-8267-078d455844f1] Started GET "/users/1" for 219.104.165.137 at 2026-10-09 05:09:00 +0000
+[6103d269-950c-4f3f-8267-078d455844f1]   
+[6103d269-950c-4f3f-8267-078d455844f1] ActionController::RoutingError (No route matches [GET] "/users/1"):
+[6103d269-950c-4f3f-8267-078d455844f1]   
+[a683c2c8-0765-495b-bdde-e665349fc180] Started GET "/users/information/edit" for 219.104.165.137 at 2026-10-09 05:09:00 +0000
+[a683c2c8-0765-495b-bdde-e665349fc180] Processing by UsersController#edit as HTML
+[a683c2c8-0765-495b-bdde-e665349fc180]   Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+[a683c2c8-0765-495b-bdde-e665349fc180] Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+[344a80b0-f578-47cf-be1f-b6e03e497007] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:09:14 +0000
+[344a80b0-f578-47cf-be1f-b6e03e497007] Processing by UsersController#my_page as HTML
+[344a80b0-f578-47cf-be1f-b6e03e497007]   Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.4ms)
+[344a80b0-f578-47cf-be1f-b6e03e497007] Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 2.5ms (8 queries, 0 cached) | GC: 0.4ms)
+[05996873-0fee-49fc-ae12-6de095ea270d] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:09:14 +0000
+[05996873-0fee-49fc-ae12-6de095ea270d] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+[05996873-0fee-49fc-ae12-6de095ea270d]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23", "filename"=>"Osaka_central_park"}
+[05996873-0fee-49fc-ae12-6de095ea270d] Redirected to http://13.230.40.246/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjE0OjE0LjMzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--772904cb7f47ef6e740635c4cb5e52022a538ce5/Osaka_central_park.png
+[05996873-0fee-49fc-ae12-6de095ea270d] Completed 302 Found in 3ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[6b43001d-0e85-4cc6-b64f-774f9015093e] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjE0OjE0LjMzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--772904cb7f47ef6e740635c4cb5e52022a538ce5/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:09:14 +0000
+[6b43001d-0e85-4cc6-b64f-774f9015093e] Processing by ActiveStorage::DiskController#show as PNG
+[6b43001d-0e85-4cc6-b64f-774f9015093e]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[6b43001d-0e85-4cc6-b64f-774f9015093e] Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3bfe36ff-9443-4739-9e2a-1d4502239da0] Started DELETE "/users/sign_out?_method=delete" for 219.104.165.137 at 2026-10-09 05:09:19 +0000
+[3bfe36ff-9443-4739-9e2a-1d4502239da0] Processing by Devise::SessionsController#destroy as TURBO_STREAM
+[3bfe36ff-9443-4739-9e2a-1d4502239da0] Redirected to http://13.230.40.246/
+[3bfe36ff-9443-4739-9e2a-1d4502239da0] Completed 303 See Other in 7ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[d95424c0-851f-4c13-a9b9-c4cfaf745754] Started GET "/" for 219.104.165.137 at 2026-10-09 05:09:19 +0000
+[d95424c0-851f-4c13-a9b9-c4cfaf745754] Processing by HomesController#about as TURBO_STREAM
+[d95424c0-851f-4c13-a9b9-c4cfaf745754]   Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.1ms)
+[d95424c0-851f-4c13-a9b9-c4cfaf745754] Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 2.0ms (6 queries, 0 cached) | GC: 0.1ms)
+[9ce83678-d828-457c-9b20-bd7945ee0af7] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:09:20 +0000
+[9ce83678-d828-457c-9b20-bd7945ee0af7] Processing by Devise::SessionsController#new as HTML
+[9ce83678-d828-457c-9b20-bd7945ee0af7]   Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+[9ce83678-d828-457c-9b20-bd7945ee0af7] Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[b96a5d9a-7d90-4201-aa81-88484015a50d] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:09:21 +0000
+[b96a5d9a-7d90-4201-aa81-88484015a50d] Processing by Devise::SessionsController#new as HTML
+[b96a5d9a-7d90-4201-aa81-88484015a50d]   Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.7ms)
+[b96a5d9a-7d90-4201-aa81-88484015a50d] Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+[529813e6-0a60-45df-b5ed-6944f9f6985b] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:09:22 +0000
+[529813e6-0a60-45df-b5ed-6944f9f6985b] Processing by Users::RegistrationsController#new as HTML
+[529813e6-0a60-45df-b5ed-6944f9f6985b]   Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+[529813e6-0a60-45df-b5ed-6944f9f6985b] Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+[f92c2f7b-45ee-429f-9ffc-b3b14214094d] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:09:32 +0000
+[f92c2f7b-45ee-429f-9ffc-b3b14214094d] Processing by Devise::SessionsController#new as HTML
+[f92c2f7b-45ee-429f-9ffc-b3b14214094d]   Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+[f92c2f7b-45ee-429f-9ffc-b3b14214094d] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[ef7981f2-ae27-4547-a62a-9acffc3d2767] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:09:47 +0000
+[ef7981f2-ae27-4547-a62a-9acffc3d2767] Processing by Devise::SessionsController#create as TURBO_STREAM
+[ef7981f2-ae27-4547-a62a-9acffc3d2767]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[ef7981f2-ae27-4547-a62a-9acffc3d2767] Completed 401 Unauthorized in 263ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[ee2631b4-a39b-4a95-8be4-ddbd8b7f612c] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:09:47 +0000
+[ee2631b4-a39b-4a95-8be4-ddbd8b7f612c] Processing by Devise::SessionsController#new as TURBO_STREAM
+[ee2631b4-a39b-4a95-8be4-ddbd8b7f612c]   Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+[ee2631b4-a39b-4a95-8be4-ddbd8b7f612c] Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[315742ea-990b-430a-8dd7-fa75910fb4b9] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:09:58 +0000
+[315742ea-990b-430a-8dd7-fa75910fb4b9] Processing by Devise::SessionsController#create as TURBO_STREAM
+[315742ea-990b-430a-8dd7-fa75910fb4b9]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[315742ea-990b-430a-8dd7-fa75910fb4b9] Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[315742ea-990b-430a-8dd7-fa75910fb4b9] Processing by Devise::SessionsController#new as TURBO_STREAM
+[315742ea-990b-430a-8dd7-fa75910fb4b9]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[315742ea-990b-430a-8dd7-fa75910fb4b9]   Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+[315742ea-990b-430a-8dd7-fa75910fb4b9] Completed 200 OK in 252ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:10:07 +0000
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52] Processing by Devise::SessionsController#create as TURBO_STREAM
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52] Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52] Processing by Devise::SessionsController#new as TURBO_STREAM
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52]   Rendered layout layouts/application.html.erb (Duration: 20.1ms | GC: 17.7ms)
+[a1f939a5-808a-4aad-9dbc-14f64daa9c52] Completed 200 OK in 289ms (Views: 20.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 17.7ms)
+[02feb37c-a30a-49b7-a954-f6804985bdef] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:10:15 +0000
+[02feb37c-a30a-49b7-a954-f6804985bdef] Processing by Devise::SessionsController#create as TURBO_STREAM
+[02feb37c-a30a-49b7-a954-f6804985bdef]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[02feb37c-a30a-49b7-a954-f6804985bdef] Completed 401 Unauthorized in 3ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+[02feb37c-a30a-49b7-a954-f6804985bdef] Processing by Devise::SessionsController#new as TURBO_STREAM
+[02feb37c-a30a-49b7-a954-f6804985bdef]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[02feb37c-a30a-49b7-a954-f6804985bdef]   Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+[02feb37c-a30a-49b7-a954-f6804985bdef] Completed 200 OK in 289ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+[bf42355c-4038-465f-9c77-bc93a57b7750] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:10:17 +0000
+[bf42355c-4038-465f-9c77-bc93a57b7750] Processing by Users::RegistrationsController#new as HTML
+[bf42355c-4038-465f-9c77-bc93a57b7750]   Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+[bf42355c-4038-465f-9c77-bc93a57b7750] Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.4ms)
+[08da365f-35bb-41f3-b7f3-6ff4af969196] Started POST "/users" for 219.104.165.137 at 2026-10-09 05:10:42 +0000
+[08da365f-35bb-41f3-b7f3-6ff4af969196] Processing by Users::RegistrationsController#create as TURBO_STREAM
+[08da365f-35bb-41f3-b7f3-6ff4af969196]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"test3", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "prefecture_id"=>"12", "introduction"=>"よろしくお願いします。"}, "commit"=>"新規登録"}
+[08da365f-35bb-41f3-b7f3-6ff4af969196] Completed 401 Unauthorized in 268ms (ActiveRecord: 13.3ms (2 queries, 0 cached) | GC: 0.0ms)
+[657d0bd1-2d4e-4a67-ae50-ce7cc04791a8] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:10:42 +0000
+[657d0bd1-2d4e-4a67-ae50-ce7cc04791a8] Processing by Devise::SessionsController#new as TURBO_STREAM
+[657d0bd1-2d4e-4a67-ae50-ce7cc04791a8]   Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.4ms)
+[657d0bd1-2d4e-4a67-ae50-ce7cc04791a8] Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+[f5a9a366-6b29-4559-80f7-d1114d681034] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:10:54 +0000
+[f5a9a366-6b29-4559-80f7-d1114d681034] Processing by Users::RegistrationsController#new as HTML
+[f5a9a366-6b29-4559-80f7-d1114d681034]   Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.3ms)
+[f5a9a366-6b29-4559-80f7-d1114d681034] Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+[714264cc-e085-46ab-b233-c532b150873a] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:11:06 +0000
+[714264cc-e085-46ab-b233-c532b150873a] Processing by Devise::SessionsController#create as TURBO_STREAM
+[714264cc-e085-46ab-b233-c532b150873a]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[714264cc-e085-46ab-b233-c532b150873a] Completed 401 Unauthorized in 253ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[b706c8fd-4a78-41c9-a865-90635a0195ca] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:11:06 +0000
+[b706c8fd-4a78-41c9-a865-90635a0195ca] Processing by Devise::SessionsController#new as TURBO_STREAM
+[b706c8fd-4a78-41c9-a865-90635a0195ca]   Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+[b706c8fd-4a78-41c9-a865-90635a0195ca] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[762da6c8-bd0a-470b-a88c-c89e1ef59265] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:11:12 +0000
+[762da6c8-bd0a-470b-a88c-c89e1ef59265] Processing by Users::RegistrationsController#new as HTML
+[762da6c8-bd0a-470b-a88c-c89e1ef59265]   Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+[762da6c8-bd0a-470b-a88c-c89e1ef59265] Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+[129422f0-a549-4b5a-8fc6-6f1d2ec0cb1c] Started POST "/users" for 219.104.165.137 at 2026-10-09 05:11:44 +0000
+[129422f0-a549-4b5a-8fc6-6f1d2ec0cb1c] Processing by Users::RegistrationsController#create as TURBO_STREAM
+[129422f0-a549-4b5a-8fc6-6f1d2ec0cb1c]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"test6", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "prefecture_id"=>"19", "introduction"=>"よろしくお願いします。"}, "commit"=>"新規登録"}
+[129422f0-a549-4b5a-8fc6-6f1d2ec0cb1c] Completed 401 Unauthorized in 262ms (ActiveRecord: 8.8ms (2 queries, 0 cached) | GC: 0.0ms)
+[a600bde7-fd8b-4fa5-9262-c910a827bfa0] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:11:44 +0000
+[a600bde7-fd8b-4fa5-9262-c910a827bfa0] Processing by Devise::SessionsController#new as TURBO_STREAM
+[a600bde7-fd8b-4fa5-9262-c910a827bfa0]   Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.2ms)
+[a600bde7-fd8b-4fa5-9262-c910a827bfa0] Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[763375ba-84a7-45a5-9eff-eb3ba69c7656] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:11:51 +0000
+[763375ba-84a7-45a5-9eff-eb3ba69c7656] Processing by Users::RegistrationsController#new as HTML
+[763375ba-84a7-45a5-9eff-eb3ba69c7656]   Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.2ms)
+[763375ba-84a7-45a5-9eff-eb3ba69c7656] Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+[9917c739-ae6e-46a5-806c-127a04b6f6d5] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:12:06 +0000
+[9917c739-ae6e-46a5-806c-127a04b6f6d5] Processing by Users::RegistrationsController#new as HTML
+[9917c739-ae6e-46a5-806c-127a04b6f6d5]   Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+[9917c739-ae6e-46a5-806c-127a04b6f6d5] Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+[99fdca7a-ec95-4872-8653-4b34d0400e78] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:12:07 +0000
+[99fdca7a-ec95-4872-8653-4b34d0400e78] Processing by Users::RegistrationsController#new as HTML
+[99fdca7a-ec95-4872-8653-4b34d0400e78]   Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+[99fdca7a-ec95-4872-8653-4b34d0400e78] Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+[88ca4b9d-1b12-4784-827a-23d7c949a15d] Started GET "/users/sign_up" for 219.104.165.137 at 2026-10-09 05:12:08 +0000
+[88ca4b9d-1b12-4784-827a-23d7c949a15d] Processing by Users::RegistrationsController#new as HTML
+[88ca4b9d-1b12-4784-827a-23d7c949a15d]   Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+[88ca4b9d-1b12-4784-827a-23d7c949a15d] Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+[b33e1c6a-f036-4107-b178-d5fa0f2db736] Started POST "/users" for 219.104.165.137 at 2026-10-09 05:12:25 +0000
+[b33e1c6a-f036-4107-b178-d5fa0f2db736] Processing by Users::RegistrationsController#create as TURBO_STREAM
+[b33e1c6a-f036-4107-b178-d5fa0f2db736]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"webcamp1", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "prefecture_id"=>"18", "introduction"=>"よろしくお願いします。"}, "commit"=>"新規登録"}
+[b33e1c6a-f036-4107-b178-d5fa0f2db736] Completed 401 Unauthorized in 270ms (ActiveRecord: 8.3ms (2 queries, 0 cached) | GC: 0.0ms)
+[8c89a5be-0428-478d-84ab-de64f81f7b57] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:12:26 +0000
+[8c89a5be-0428-478d-84ab-de64f81f7b57] Processing by Devise::SessionsController#new as TURBO_STREAM
+[8c89a5be-0428-478d-84ab-de64f81f7b57]   Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+[8c89a5be-0428-478d-84ab-de64f81f7b57] Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c99f0398-6411-417c-9159-cc3e0b345b4c] Started GET "/" for 122.180.145.132 at 2026-10-09 05:21:47 +0000
+[c99f0398-6411-417c-9159-cc3e0b345b4c] Processing by HomesController#about as HTML
+[c99f0398-6411-417c-9159-cc3e0b345b4c]   Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 7.7ms)
+[c99f0398-6411-417c-9159-cc3e0b345b4c] Completed 200 OK in 24ms (Views: 5.0ms | ActiveRecord: 18.2ms (6 queries, 0 cached) | GC: 7.7ms)
+- Gracefully stopping, waiting for requests to finish
+Puma starting in single mode...
+* Puma version: 8.0.2 ("Into the Arena")
+* Ruby version: ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [x86_64-linux]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: production
+*          PID: 91631
+[dotenv] Loaded [33m.env[0m
+* Listening on unix:///home/ubuntu/greennavi/tmp/sockets/puma.sock
+Use Ctrl-C to stop
+[3ed8d7c2-fc09-4765-8b95-179f8e9f76b1] Started GET "/" for 219.104.165.137 at 2026-10-09 05:51:54 +0000
+[3ed8d7c2-fc09-4765-8b95-179f8e9f76b1] Processing by HomesController#about as HTML
+[3ed8d7c2-fc09-4765-8b95-179f8e9f76b1]   Rendered layout layouts/application.html.erb (Duration: 88.8ms | GC: 8.5ms)
+[3ed8d7c2-fc09-4765-8b95-179f8e9f76b1] Completed 200 OK in 95ms (Views: 51.3ms | ActiveRecord: 38.4ms (6 queries, 0 cached) | GC: 8.5ms)
+[adac605e-a537-4a3a-a60f-327c186ca852] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:51:54 +0000
+[adac605e-a537-4a3a-a60f-327c186ca852] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+[adac605e-a537-4a3a-a60f-327c186ca852]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23", "filename"=>"Osaka_central_park"}
+[adac605e-a537-4a3a-a60f-327c186ca852] Redirected to http://13.230.40.246/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjU2OjU0LjM3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--bec95f78eedb75438fc62f9a967c1b02abc0e077/Osaka_central_park.png
+[adac605e-a537-4a3a-a60f-327c186ca852] Completed 302 Found in 5ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+[520aad66-58dd-464d-bce1-d95d745f516b] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjU2OjU0LjM3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--bec95f78eedb75438fc62f9a967c1b02abc0e077/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:51:54 +0000
+[520aad66-58dd-464d-bce1-d95d745f516b] Processing by ActiveStorage::DiskController#show as PNG
+[520aad66-58dd-464d-bce1-d95d745f516b]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[520aad66-58dd-464d-bce1-d95d745f516b] Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[aa3ccff3-02b2-4f46-98ce-1ba2c62fad7b] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:51:59 +0000
+[aa3ccff3-02b2-4f46-98ce-1ba2c62fad7b] Processing by ParksController#show as HTML
+[aa3ccff3-02b2-4f46-98ce-1ba2c62fad7b]   Parameters: {"id"=>"2"}
+[aa3ccff3-02b2-4f46-98ce-1ba2c62fad7b]   Rendered layout layouts/application.html.erb (Duration: 27.8ms | GC: 0.4ms)
+[aa3ccff3-02b2-4f46-98ce-1ba2c62fad7b] Completed 200 OK in 31ms (Views: 18.9ms | ActiveRecord: 10.3ms (6 queries, 0 cached) | GC: 0.4ms)
+[54881e2a-7e21-49f3-b3a0-8010f14f5437] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:52:02 +0000
+[54881e2a-7e21-49f3-b3a0-8010f14f5437] Processing by ParksController#show as HTML
+[54881e2a-7e21-49f3-b3a0-8010f14f5437]   Parameters: {"id"=>"2"}
+[54881e2a-7e21-49f3-b3a0-8010f14f5437]   Rendered layout layouts/application.html.erb (Duration: 15.8ms | GC: 0.4ms)
+[54881e2a-7e21-49f3-b3a0-8010f14f5437] Completed 200 OK in 19ms (Views: 11.7ms | ActiveRecord: 5.3ms (6 queries, 0 cached) | GC: 0.4ms)
+[6a5bb266-7358-4aed-9955-5fa94255690c] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjU2OjU0LjM3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--bec95f78eedb75438fc62f9a967c1b02abc0e077/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:52:02 +0000
+[6a5bb266-7358-4aed-9955-5fa94255690c] Processing by ActiveStorage::DiskController#show as PNG
+[6a5bb266-7358-4aed-9955-5fa94255690c]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[6a5bb266-7358-4aed-9955-5fa94255690c] Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[175edc5d-fb80-4482-87b8-b2141f3f5775] Started GET "/" for 219.104.165.137 at 2026-10-09 05:52:13 +0000
+[175edc5d-fb80-4482-87b8-b2141f3f5775] Processing by HomesController#about as HTML
+[175edc5d-fb80-4482-87b8-b2141f3f5775]   Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.2ms)
+[175edc5d-fb80-4482-87b8-b2141f3f5775] Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 2.4ms (6 queries, 0 cached) | GC: 0.2ms)
+[fc7eebfa-3dbb-4c77-85ee-0dbaa553d5a9] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA1OjU2OjU0LjM3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--bec95f78eedb75438fc62f9a967c1b02abc0e077/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 05:52:13 +0000
+[fc7eebfa-3dbb-4c77-85ee-0dbaa553d5a9] Processing by ActiveStorage::DiskController#show as PNG
+[fc7eebfa-3dbb-4c77-85ee-0dbaa553d5a9]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[fc7eebfa-3dbb-4c77-85ee-0dbaa553d5a9] Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[b16e7c2f-4560-4103-963f-da5c5ec979b7] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:52:15 +0000
+[b16e7c2f-4560-4103-963f-da5c5ec979b7] Processing by Devise::SessionsController#new as HTML
+[b16e7c2f-4560-4103-963f-da5c5ec979b7]   Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+[b16e7c2f-4560-4103-963f-da5c5ec979b7] Completed 200 OK in 18ms (Views: 4.2ms | ActiveRecord: 4.1ms (0 queries, 0 cached) | GC: 0.5ms)
+[90ca380d-82d7-45ee-b25c-ffc0f0396434] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:52:21 +0000
+[90ca380d-82d7-45ee-b25c-ffc0f0396434] Processing by Devise::SessionsController#create as TURBO_STREAM
+[90ca380d-82d7-45ee-b25c-ffc0f0396434]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[90ca380d-82d7-45ee-b25c-ffc0f0396434] Redirected to http://13.230.40.246/users/my_page
+[90ca380d-82d7-45ee-b25c-ffc0f0396434] Completed 303 See Other in 255ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.4ms)
+[bd5590ab-1c2b-400d-99d6-2487bfb6fe5a] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:52:21 +0000
+[bd5590ab-1c2b-400d-99d6-2487bfb6fe5a] Processing by UsersController#my_page as TURBO_STREAM
+[bd5590ab-1c2b-400d-99d6-2487bfb6fe5a]   Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.5ms)
+[bd5590ab-1c2b-400d-99d6-2487bfb6fe5a] Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 2.7ms (8 queries, 0 cached) | GC: 0.8ms)
+[8521364f-9035-4f48-9f35-a0b2d89c578b] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:52:24 +0000
+[8521364f-9035-4f48-9f35-a0b2d89c578b] Processing by ParksController#show as HTML
+[8521364f-9035-4f48-9f35-a0b2d89c578b]   Parameters: {"id"=>"2"}
+[8521364f-9035-4f48-9f35-a0b2d89c578b]   Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+[8521364f-9035-4f48-9f35-a0b2d89c578b] Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 4.0ms (7 queries, 0 cached) | GC: 0.0ms)
+[1146c1db-e6d8-4d1c-9037-c781f21ade6c] Started GET "/parks/1" for 219.104.165.137 at 2026-10-09 05:52:24 +0000
+[1146c1db-e6d8-4d1c-9037-c781f21ade6c] Processing by ParksController#show as HTML
+[1146c1db-e6d8-4d1c-9037-c781f21ade6c]   Parameters: {"id"=>"1"}
+[1146c1db-e6d8-4d1c-9037-c781f21ade6c]   Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+[1146c1db-e6d8-4d1c-9037-c781f21ade6c] Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 2.7ms (6 queries, 0 cached) | GC: 0.0ms)
+[76b30c37-9f4a-4008-8f8a-61fb30fedba4] Started GET "/parks/1/edit" for 219.104.165.137 at 2026-10-09 05:52:27 +0000
+[76b30c37-9f4a-4008-8f8a-61fb30fedba4] Processing by ParksController#edit as HTML
+[76b30c37-9f4a-4008-8f8a-61fb30fedba4]   Parameters: {"id"=>"1"}
+[76b30c37-9f4a-4008-8f8a-61fb30fedba4]   Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+[76b30c37-9f4a-4008-8f8a-61fb30fedba4] Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 3.2ms (7 queries, 0 cached) | GC: 0.0ms)
+[fcfb8c46-3de5-416a-ba0a-4d110ff2d0d3] Started GET "/parks" for 219.104.165.137 at 2026-10-09 05:52:32 +0000
+[fcfb8c46-3de5-416a-ba0a-4d110ff2d0d3] Processing by ParksController#index as HTML
+[fcfb8c46-3de5-416a-ba0a-4d110ff2d0d3]   Rendered layout layouts/application.html.erb (Duration: 23.0ms | GC: 11.8ms)
+[fcfb8c46-3de5-416a-ba0a-4d110ff2d0d3] Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 3.0ms (8 queries, 0 cached) | GC: 11.8ms)
+[c6a11a57-7e65-4c4b-bdca-d2ad0d13f710] Started GET "/parks/2" for 219.104.165.137 at 2026-10-09 05:52:34 +0000
+[c6a11a57-7e65-4c4b-bdca-d2ad0d13f710] Processing by ParksController#show as HTML
+[c6a11a57-7e65-4c4b-bdca-d2ad0d13f710]   Parameters: {"id"=>"2"}
+[c6a11a57-7e65-4c4b-bdca-d2ad0d13f710]   Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+[c6a11a57-7e65-4c4b-bdca-d2ad0d13f710] Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 2.7ms (7 queries, 0 cached) | GC: 0.6ms)
+[05e8d7f7-cac0-4e7d-9ea2-9b87d3d40278] Started GET "/parks/1" for 219.104.165.137 at 2026-10-09 05:52:35 +0000
+[05e8d7f7-cac0-4e7d-9ea2-9b87d3d40278] Processing by ParksController#show as HTML
+[05e8d7f7-cac0-4e7d-9ea2-9b87d3d40278]   Parameters: {"id"=>"1"}
+[05e8d7f7-cac0-4e7d-9ea2-9b87d3d40278]   Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+[05e8d7f7-cac0-4e7d-9ea2-9b87d3d40278] Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 2.3ms (6 queries, 0 cached) | GC: 0.0ms)
+[85a92868-c3fa-4866-92a3-7b771cce8462] Started DELETE "/parks/1" for 219.104.165.137 at 2026-10-09 05:52:38 +0000
+[85a92868-c3fa-4866-92a3-7b771cce8462] Processing by ParksController#destroy as TURBO_STREAM
+[85a92868-c3fa-4866-92a3-7b771cce8462]   Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+[85a92868-c3fa-4866-92a3-7b771cce8462] Redirected to http://13.230.40.246/users/my_page
+[85a92868-c3fa-4866-92a3-7b771cce8462] Completed 302 Found in 35ms (ActiveRecord: 17.2ms (21 queries, 0 cached) | GC: 0.5ms)
+[262605bc-883e-45dc-9214-e39b646df294] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:52:38 +0000
+[262605bc-883e-45dc-9214-e39b646df294] Processing by UsersController#my_page as TURBO_STREAM
+[262605bc-883e-45dc-9214-e39b646df294]   Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.2ms)
+[262605bc-883e-45dc-9214-e39b646df294] Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 2.1ms (6 queries, 0 cached) | GC: 0.2ms)
+[8823c6dc-3848-4fa3-beaf-7fe8a2c72db4] Started DELETE "/users/sign_out?_method=delete" for 219.104.165.137 at 2026-10-09 05:52:51 +0000
+[8823c6dc-3848-4fa3-beaf-7fe8a2c72db4] Processing by Devise::SessionsController#destroy as TURBO_STREAM
+[8823c6dc-3848-4fa3-beaf-7fe8a2c72db4] Redirected to http://13.230.40.246/
+[8823c6dc-3848-4fa3-beaf-7fe8a2c72db4] Completed 303 See Other in 5ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[a7d72498-59a2-4ac0-8629-47b5b6a31e67] Started GET "/" for 219.104.165.137 at 2026-10-09 05:52:51 +0000
+[a7d72498-59a2-4ac0-8629-47b5b6a31e67] Processing by HomesController#about as TURBO_STREAM
+[a7d72498-59a2-4ac0-8629-47b5b6a31e67]   Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+[a7d72498-59a2-4ac0-8629-47b5b6a31e67] Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.8ms (4 queries, 0 cached) | GC: 0.0ms)
+[cae7006c-ab03-4d48-882f-4cb071be3ba8] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:52:52 +0000
+[cae7006c-ab03-4d48-882f-4cb071be3ba8] Processing by Devise::SessionsController#new as HTML
+[cae7006c-ab03-4d48-882f-4cb071be3ba8]   Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.4ms)
+[cae7006c-ab03-4d48-882f-4cb071be3ba8] Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+[55cf1daa-7ce9-41db-a41f-eb9e9ad9e2cf] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:52:54 +0000
+[55cf1daa-7ce9-41db-a41f-eb9e9ad9e2cf] Processing by Devise::SessionsController#new as HTML
+[55cf1daa-7ce9-41db-a41f-eb9e9ad9e2cf]   Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+[55cf1daa-7ce9-41db-a41f-eb9e9ad9e2cf] Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[03819536-10e2-4c04-8278-f149cc018621] Started POST "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:53:01 +0000
+[03819536-10e2-4c04-8278-f149cc018621] Processing by Devise::SessionsController#create as TURBO_STREAM
+[03819536-10e2-4c04-8278-f149cc018621]   Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+[03819536-10e2-4c04-8278-f149cc018621] Redirected to http://13.230.40.246/users/my_page
+[03819536-10e2-4c04-8278-f149cc018621] Completed 303 See Other in 358ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 1.4ms)
+[ba4cafb3-0908-4048-874f-1128a328175b] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:53:01 +0000
+[ba4cafb3-0908-4048-874f-1128a328175b] Processing by UsersController#my_page as TURBO_STREAM
+[ba4cafb3-0908-4048-874f-1128a328175b]   Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.0ms)
+[ba4cafb3-0908-4048-874f-1128a328175b] Completed 200 OK in 16ms (Views: 8.7ms | ActiveRecord: 4.2ms (6 queries, 0 cached) | GC: 0.0ms)
+[8e4bb544-1079-4f06-bda5-7acec22fcc2c] Started GET "/parks/new" for 219.104.165.137 at 2026-10-09 05:53:15 +0000
+[8e4bb544-1079-4f06-bda5-7acec22fcc2c] Processing by ParksController#new as HTML
+[8e4bb544-1079-4f06-bda5-7acec22fcc2c]   Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.0ms)
+[8e4bb544-1079-4f06-bda5-7acec22fcc2c] Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 2.0ms (4 queries, 0 cached) | GC: 0.0ms)
+[0f30c968-5ad6-44dc-80f6-748e6916057a] Started DELETE "/users/sign_out?_method=delete" for 219.104.165.137 at 2026-10-09 05:53:31 +0000
+[0f30c968-5ad6-44dc-80f6-748e6916057a] Processing by Devise::SessionsController#destroy as TURBO_STREAM
+[0f30c968-5ad6-44dc-80f6-748e6916057a] Redirected to http://13.230.40.246/
+[0f30c968-5ad6-44dc-80f6-748e6916057a] Completed 303 See Other in 3ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[db371137-4122-4203-8a2e-5250add4fb0d] Started GET "/" for 219.104.165.137 at 2026-10-09 05:53:32 +0000
+[db371137-4122-4203-8a2e-5250add4fb0d] Processing by HomesController#about as TURBO_STREAM
+[db371137-4122-4203-8a2e-5250add4fb0d]   Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+[db371137-4122-4203-8a2e-5250add4fb0d] Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.6ms (4 queries, 0 cached) | GC: 0.0ms)
+[941cd868-1bef-4fd9-8ff0-85c887452a7a] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:53:32 +0000
+[941cd868-1bef-4fd9-8ff0-85c887452a7a] Processing by Devise::SessionsController#new as HTML
+[941cd868-1bef-4fd9-8ff0-85c887452a7a]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+[941cd868-1bef-4fd9-8ff0-85c887452a7a] Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[60b46c21-9420-42e7-8c68-8b2760b957f8] Started GET "/users/my_page" for 219.104.165.137 at 2026-10-09 05:54:05 +0000
+[60b46c21-9420-42e7-8c68-8b2760b957f8] Processing by UsersController#my_page as HTML
+[60b46c21-9420-42e7-8c68-8b2760b957f8] Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d7b6eec3-912b-4b26-a540-26f7e1f32eab] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:54:05 +0000
+[d7b6eec3-912b-4b26-a540-26f7e1f32eab] Processing by Devise::SessionsController#new as HTML
+[d7b6eec3-912b-4b26-a540-26f7e1f32eab]   Rendered layout layouts/application.html.erb (Duration: 14.7ms | GC: 12.8ms)
+[d7b6eec3-912b-4b26-a540-26f7e1f32eab] Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 12.8ms)
+[3d05b2db-a588-47c9-b7e9-6a199b4f20d7] Started GET "/parks/new" for 219.104.165.137 at 2026-10-09 05:54:21 +0000
+[3d05b2db-a588-47c9-b7e9-6a199b4f20d7] Processing by ParksController#new as HTML
+[3d05b2db-a588-47c9-b7e9-6a199b4f20d7] Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[0a02c011-3d35-4f25-8543-2ba29bbc037f] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:54:21 +0000
+[0a02c011-3d35-4f25-8543-2ba29bbc037f] Processing by Devise::SessionsController#new as HTML
+[0a02c011-3d35-4f25-8543-2ba29bbc037f]   Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+[0a02c011-3d35-4f25-8543-2ba29bbc037f] Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[42b7c4de-1fbd-4ada-93f1-2ee59f783b39] Started GET "/users/information/edit" for 219.104.165.137 at 2026-10-09 05:54:35 +0000
+[42b7c4de-1fbd-4ada-93f1-2ee59f783b39] Processing by UsersController#edit as HTML
+[42b7c4de-1fbd-4ada-93f1-2ee59f783b39] Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[98b47cf6-c715-4798-8cfd-6335d6ca70cf] Started GET "/users/sign_in" for 219.104.165.137 at 2026-10-09 05:54:35 +0000
+[98b47cf6-c715-4798-8cfd-6335d6ca70cf] Processing by Devise::SessionsController#new as HTML
+[98b47cf6-c715-4798-8cfd-6335d6ca70cf]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+[98b47cf6-c715-4798-8cfd-6335d6ca70cf] Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
