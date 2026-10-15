@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "park_comments" do %>
+  <%= turbo_frame_tag "park_comments" do %>
+    <%= render @park.park_comments.order(created_at: :desc) %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace "comment_form" do %>
+  <%= render "park_comments/form",
+             park: @park,
+             park_comment: ParkComment.new %>
+<% end %>

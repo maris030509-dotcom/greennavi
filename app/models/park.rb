@@ -16,6 +16,7 @@ class Park < ApplicationRecord
   has_many :playgrounds, through: :park_playgrounds, dependent: :destroy
   has_many :park_equipments, dependent: :destroy
   has_many :equipments, through: :park_equipments, dependent: :destroy
+  has_many :park_comments, dependent: :destroy
 
   validates :name, presence: true
   validates :prefecture_id, presence: true

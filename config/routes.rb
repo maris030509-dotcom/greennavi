@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get "search", to: "searches#index"
 
-  resources :parks
+  resources :parks do
+    resources :park_comments, only: [:create, :edit, :update, :destroy]
+  end
 
   resources :users, only: [:edit, :update] do
     collection do

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   belongs_to :prefecture, optional: true
+  has_many :park_comments
 
   def active_for_authentication?
     super && is_active?

@@ -1,0 +1,29 @@
+<div class="card mb-3 shadow-sm">
+  <div class="card-body">
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div>
+        <strong>
+          <% if park_comment.user.is_active %>
+            <%= park_comment.user.name %>
+          <% else %>
+            <span class="text-muted">退会済みユーザー</span>
+          <% end %>
+        </strong>
+      </div>
+
+      <small class="text-muted">
+        <%= l park_comment.created_at, format: :short %>
+      </small>
+    </div>
+
+    <% if park_comment.is_active %>
+      <%= simple_format(park_comment.body) %>
+    <% else %>
+      <p class="text-muted fst-italic mb-0">
+        このコメントは削除されました
+      </p>
+    <% end %>
+
+  </div>
+</div>
