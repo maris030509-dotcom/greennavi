@@ -17,9 +17,21 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users, path: "users", controllers: {
-    registrations: "users/registrations"
-  }
+  devise_for :users,
+            path: "users", 
+            controllers: {
+            registrations: "users/registrations"
+            }
+
+  devise_for :admins,
+            path: "admin",
+            controllers: {
+              sessions: "admins/sessions"
+            }
+  namespace :admin do
+    root "users#index"
+    resources :users, only: [:index, :show, :edit, :update]
+  end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

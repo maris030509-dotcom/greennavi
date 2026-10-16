@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+# 都道府県データ
 Prefecture.create!(name: "北海道")
 Prefecture.create!(name: "青森県")
 Prefecture.create!(name: "岩手県")
@@ -56,15 +56,7 @@ Prefecture.create!(name: "宮崎県")
 Prefecture.create!(name: "鹿児島県")
 Prefecture.create!(name: "沖縄県")
 
-User.create!(
-  name: "test",
-  email: "example@example.com",
-  password: "password",
-  prefecture_id: "1",
-  introduction: "よろしくお願いします。",
-  is_active: true
-)
-
+#公園設備データ
 [
   "大型遊具",
   "芝生",
@@ -78,6 +70,7 @@ User.create!(
   Equipment.find_or_create_by!(name: equipment_name)
 end
 
+#公園遊具データ
 [
   "すべり台",
   "ブランコ",
@@ -92,11 +85,16 @@ end
   Playground.find_or_create_by!(name: playground_name)
 end
 
-
+#ユーザーデモデータ
 User.find_or_create_by!(email: "example@example.com") do |user|
   user.name = "test"
   user.password = "password"
   user.prefecture_id = 1
   user.introduction = "よろしくお願いします。"
   user.is_active = true
+end
+
+#管理者データ
+Admin.find_or_create_by!(email: "admin@example.com") do |admin|
+  admin.password = "password"
 end
