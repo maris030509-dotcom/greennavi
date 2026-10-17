@@ -1,6 +1,9 @@
 class ParkCommentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_park
+  before_action :set_park_comment, only: [:edit, :update, :destroy]
+
   def create
-    @park = Park.find(params[:park_id])
     @park_comment = current_user.park_comments.build(park_comment_params)
     @park_comment.park = @park
 
@@ -19,14 +22,32 @@ class ParkCommentsController < ApplicationController
   end
 
   def update
+    if @park_comment.update(park_comment_params)
+      redirect_to park_path(@park),
+                  notice: "コメントを更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @park_comment.update(is_active: false)
+
+    redirect_to park_path(@park),
+                notice: "コメントを削除しました"
   end
 
   private
+
+  def set_park
+    @park = Park.find(params[:park_id])
+  end
+
+  def set_park_comment
+    @park_comment = current_user.park_comments.find(params[:id])
+  end
+
   def park_comment_params
     params.require(:park_comment).permit(:body)
   end
-
 end
