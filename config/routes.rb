@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root "users#index"
     resources :users, only: [:index, :show, :edit, :update]
+    resources :parks, only: [:index, :show, :edit, :update, :destroy]
+    resources :park_comments, only: [:destroy]
+    resources :prefectures, only: [:index, :create, :edit, :update]
+    resources :equipments, only: [:index, :create, :edit, :update]
+    resources :playgrounds, only: [:index, :create, :edit, :update]
   end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

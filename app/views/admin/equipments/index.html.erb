@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <div class="card p-4 shadow-sm mx-auto" style="max-width: 700px;">
+
+    <h4 class="text-center mb-4 bg-light py-2">設備一覧・追加</h4>
+
+    <!-- 新規登録フォーム -->
+    <div class="mb-4">
+      <%= form_with model: @equipment, url: admin_equipments_path, local: true do |f| %>
+        <div class="mb-3">
+          <%= f.label :name, "設備名", class: "fw-bold" %>
+          <%= f.text_field :name, placeholder: "設備名", class: "form-control" %>
+        </div>
+        <%= f.submit "新規登録", class: "btn btn-success px-4 py-2" %>
+      <% end %>
+    </div>
+
+    <!-- 設備一覧 -->
+    <table class="table table-bordered table-hover align-middle text-center w-100">
+      <thead class="table-light">
+        <tr>
+          <th>設備</th>
+          <th class="text-center">編集</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @equipments.each do |equipment| %>
+          <tr>
+            <td><%= equipment.name %></td>
+            <td class="text-center">
+              <%= link_to "編集する", edit_admin_equipment_path(equipment), class: "btn btn-success btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
