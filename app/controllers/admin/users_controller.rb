@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   before_action :authenticate_admin!
-  before_action :set_user
+  before_action :set_user, only: [:show, :edit, :update]
   
   def index
     @users = User.all
