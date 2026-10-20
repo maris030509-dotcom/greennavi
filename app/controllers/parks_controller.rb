@@ -1,27 +1,24 @@
 class ParksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_park, only: [:show, :edit, :update, :destroy]
+  before_action :set_master_data, only: [:new, :create, :edit, :update]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  
   def index
-    @parks = Park.all
+    @parks = Park.order(created_at: :desc)
   end
 
   def show
-    @park = Park.find(params[:id])
     @park_comment = ParkComment.new
   end
 
   def new
     @park = Park.new
-    @prefectures = Prefecture.all
-    @equipments = Equipment.all
-    @playgrounds = Playground.all
   end
 
   def create
     @park = Park.new(park_params)
     @park.user = current_user
-    @prefectures = Prefecture.all
-    @equipments = Equipment.all
-    @playgrounds = Playground.all
     if @park.save
       redirect_to park_path(@park), notice:"投稿完了しました"
     else
@@ -31,17 +28,9 @@ class ParksController < ApplicationController
   end
 
   def edit
-    @park = Park.find(params[:id])
-    @prefectures = Prefecture.all
-    @equipments = Equipment.all
-    @playgrounds = Playground.all
   end
 
   def update
-    @park = Park.find(params[:id])
-    @prefectures = Prefecture.all
-    @equipments = Equipment.all
-    @playgrounds = Playground.all
     if @park.update(park_params)
       redirect_to park_path(@park), notice:"更新しました"
     else
@@ -50,12 +39,21 @@ class ParksController < ApplicationController
   end
   
   def destroy
-    @park = Park.find(params[:id])
     @park.destroy
     redirect_to my_page_users_path, notice: "削除しました"
   end
 
   private
+  def set_park
+    @park = Park.find(params[:id])
+  end
+
+  def set_master_data
+    @prefectures = Prefecture.all
+    @equipments = Equipment.all
+    @playgrounds = Playground.all
+  end
+
   def park_params
     params.require(:park).permit(
       :park_image, :name, :introduction, 

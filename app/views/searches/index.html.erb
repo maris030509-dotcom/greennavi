@@ -34,7 +34,7 @@
                 <td>
                   <%= link_to park_path(park) do %>
                     <% if park.park_image.attached? %>
-                      <%= image_tag park.image,
+                      <%= image_tag park.park_image,
                           class: "img-thumbnail search-park-image" %>
                     <% else %>
                       <%= image_tag "no_image.png",

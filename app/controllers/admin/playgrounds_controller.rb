@@ -1,4 +1,5 @@
 class Admin::PlaygroundsController < Admin::ApplicationController
+  before_action :set_playground, only: [:edit, :update]
   def index
     @playgrounds = Playground.all
     @playground = Playground.new
@@ -15,11 +16,9 @@ class Admin::PlaygroundsController < Admin::ApplicationController
   end
 
   def edit
-    @playground = Playground.find(params[:id])
   end
 
   def update
-    @playground = Playground.find(params[:id])
     if @playground.update(playground_params)
       redirect_to admin_playgrounds_path, notice: "遊具名を更新しました"
     else
@@ -28,6 +27,10 @@ class Admin::PlaygroundsController < Admin::ApplicationController
   end
 
   private
+  def set_playground
+    @playground = Playground.find(params[:id])
+  end
+  
   def playground_params
     params.require(:playground).permit(:name)
   end

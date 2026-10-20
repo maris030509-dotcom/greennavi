@@ -15,16 +15,42 @@
   box-sizing: border-box;
 }
 
-header {
+.main-navbar {
   background-color: #dff7e8;
 }
+
+.header-logo {
+  height: 70px;
+}
+
+a.header-button {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 6px 12px !important;
+  margin: 0 4px;
+  color: #495057 !important;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.header-button:hover {
+  background-color: #f8f9fa;
+}
+
 
 body {
   font-family: 'Kosugi Maru', sans-serif !important;
   background-color: #fff9e6 !important;
 }
 
-
+.hero-background{
+  width: 80%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+  border-radius: 12px;
+}
 
 .hero-content {
   background-color: rgba(255, 255, 255, 0.8);
@@ -32,10 +58,18 @@ body {
   border-radius: 12px;
   width: 80%;
   color: #2e7d32;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero-content h2, .hero-content p {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-logo{
+  width: 300px;
+  margin-bottom: 16px;
 }
 
 .card.step-card {
@@ -51,4 +85,40 @@ body {
   font-family: 'Zen Maru Gothic', sans-serif;
   font-size: 16px;
   color: #2e7d32;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.park-image {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  .hero-content {
+    width: 95%;
+  }
+
+  .hero-logo {
+    width: 180px;
+  }
+
+  .hero-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .hero-content h6 {
+    font-size: 0.9rem;
+  }
+
+  .header-button {
+    border: none;
+    background: transparent;
+    padding: 8px 0 !important;
+    margin: 0;
+  }
 }
