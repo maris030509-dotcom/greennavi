@@ -1,4 +1,6 @@
 class Admin::EquipmentsController < Admin::ApplicationController
+  before_action :set_equipment, only: [:edit, :update]
+  
   def index
     @equipments = Equipment.all
     @equipment = Equipment.new
@@ -15,11 +17,9 @@ class Admin::EquipmentsController < Admin::ApplicationController
   end
 
   def edit
-    @equipment = Equipment.find(params[:id])
   end
 
   def update
-    @equipment = Equipment.find(params[:id])
     if @equipment.update(equipment_params)
       redirect_to admin_equipments_path, notice: "設備を更新しました"
     else
@@ -28,6 +28,10 @@ class Admin::EquipmentsController < Admin::ApplicationController
   end
 
   private
+  def set_equipment
+    @equipment = Equipment.find(params[:id])
+  end
+
   def equipment_params
     params.require(:equipment).permit(:name)
   end

@@ -31,37 +31,106 @@
   </head>
 
   <!-- ヘッダー-->
-  <header class="py-3 border-bottom">
-    <div class="container d-flex justify-content-between align-items-center">
+  <header>
+    <nav class="navbar navbar-expand-lg main-navbar border-bottom">
+      <div class="container">
 
-      <!-- ロゴ -->
-      <div class="logo">
-        <%= link_to root_path do %>
-          <%= image_tag "logo.png", alt: "LOGO", style: "height:70px;" %>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png",
+              alt: "LOGO",
+              class: "header-logo" %>
         <% end %>
-      </div>
 
-      <!-- ナビゲーション -->
-      <div class="d-flex align-items-center gap-3">
-        <% if user_signed_in? %>
-          <%= link_to "マイページ", my_page_users_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "公園一覧", parks_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "新規投稿", new_park_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete}, class: "btn btn-outline-secondary" %>
-        <% else %>
-          <%= link_to "公園一覧", parks_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary" %>
-        <% end %>
-      </div>
-      <%= form_with url: search_path, method: :get, local: true do |f| %>
-        <%= f.text_field :keyword,
-            value: params[:keyword],
-            placeholder: "公園を検索" %>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
 
-        <%= f.submit "検索" %>
-      <% end %>
-    </div>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <div class="ms-auto">
+
+            <% if user_signed_in? %>
+
+              <ul class="navbar-nav align-items-lg-center">
+
+                <li class="nav-item">
+                  <%= link_to "マイページ",
+                      my_page_users_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "公園一覧",
+                      parks_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "新規投稿",
+                      new_park_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "ログアウト",
+                      destroy_user_session_path,
+                      data: { turbo_method: :delete },
+                      class: "nav-link header-button" %>
+                </li>
+
+              </ul>
+
+            <% else %>
+
+              <ul class="navbar-nav">
+
+                <li class="nav-item">
+                  <%= link_to "公園一覧",
+                      parks_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "新規登録",
+                      new_user_registration_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "ログイン",
+                      new_user_session_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+              </ul>
+
+            <% end %>
+            <!--検索機能　公園名もしくは都道府県で絞り込み -->
+            <%= form_with url: search_path,
+                method: :get,
+                local: true,
+                class: "d-flex mt-3 mt-lg-0 ms-lg-3" do |f| %>
+
+              <%= f.text_field :keyword,
+                  value: params[:keyword],
+                  placeholder: "公園名/都道府県名を入力",
+                  class: "form-control me-2" %>
+
+              <%= f.submit "検索",
+                  class: "btn btn-success" %>
+
+            <% end %>
+
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
   </header>
 
   <body>
