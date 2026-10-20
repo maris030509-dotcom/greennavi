@@ -19,7 +19,7 @@ class Admin::EquipmentsController < Admin::ApplicationController
   end
 
   def update
-    @equipment = Equioment.find(params[:id])
+    @equipment = Equipment.find(params[:id])
     if @equipment.update(equipment_params)
       redirect_to admin_equipments_path, notice: "設備を更新しました"
     else

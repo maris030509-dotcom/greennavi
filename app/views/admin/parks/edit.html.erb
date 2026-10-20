@@ -5,13 +5,13 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h4 class="mb-0">公園情報編集</h4>
 
-      <%= button_to "削除する", park_path(@park),
+      <%= button_to "削除する", admin_park_path(@park),
           method: :delete,
           data: { turbo_confirm: "本当に削除しますか？" },
           class: "btn btn-danger btn-sm" %>
     </div>
 
-    <%= form_with model: @park, method: :patch, local: true do |f| %>
+    <%= form_with model: [:admin, @park] do |f| %>
 
       <!-- バリデーションメッセージ -->
       <% if @park.errors.any? %>
@@ -26,14 +26,15 @@
       <% end %>
 
       <!-- 公園イメージ画像 -->
-      <div class="row mb-3">
-        <div class="col-2 d-flex align-items-center">
-          <%= f.label :image, "画像", class: "form-label mb-0" %>
+      <% if @park.park_image.attached? %>
+        <div class="mb-3">
+          <%= image_tag @park.park_image,
+              class: "img-thumbnail",
+              style: "max-width: 300px;" %>
         </div>
-        <div class="col-10">
-          <%= f.file_field :image, class: "form-control" %>
-        </div>
-      </div>
+      <% end %>
+
+      <%= f.file_field :park_image, class: "form-control" %>
 
       <!-- 公園名 -->
       <div class="row mb-3">
@@ -44,6 +45,9 @@
           <%= f.text_field :name, class: "form-control" %>
         </div>
       </div>
+
+      <!--投稿者 -->
+      投稿者：<%= @park.user.name %>
 
       <!-- 公園紹介文 -->
       <div class="row mb-3">
@@ -82,7 +86,7 @@
           <%= f.label :equipment_ids, "設備", class: "form-label mb-0" %>
         </div>
         <div class="col-10">
-          <% Equipment.all.each do |equipment| %>
+          <% @equipments.each do |equipment| %>
             <div class="form-check">
               <%= check_box_tag "park[equipment_ids][]",
                                 equipment.id,
@@ -104,7 +108,7 @@
           <%= f.label :playground_ids, "遊具", class: "form-label mb-0" %>
         </div>
         <div class="col-10">
-          <% Playground.all.each do |playground| %>
+          <% @playgrounds.each do |playground| %>
             <div class="form-check">
               <%= check_box_tag "park[playground_ids][]",
                                 playground.id,
