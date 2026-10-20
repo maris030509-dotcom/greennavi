@@ -1,0 +1,23 @@
+<div id="comment_form">
+  <div class="card shadow-sm mt-4">
+    <div class="card-body">
+      <h5 class="card-title mb-3">コメントを投稿する</h5>
+
+      <%= form_with model: [park, park_comment] do |f| %>
+
+        <div class="mb-3">
+          <%= f.text_area :body,
+              class: "form-control",
+              rows: 4,
+              placeholder: "この公園を利用した感想を投稿してみましょう" %>
+        </div>
+
+        <div class="text-end">
+          <%= f.submit "投稿する",
+              class: "btn btn-success" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

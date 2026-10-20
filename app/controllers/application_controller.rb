@@ -1,14 +1,20 @@
 class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   #　全ページログイン必須、Devise画面は例外
-  before_action :authenticate_user!, unless: :devise_controller?
+  before_action :authenticate_user!, unless: :skip_user_authentication?
   
   allow_browser versions: :modern
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    my_page_users_path  # ログイン後にマイページへ
+    if resource.is_a?(Admin)
+      admin_users_path  #管理者はログイン後会員一覧ページへ
+    elsif resource.is_a?(User)
+      my_page_users_path  # ユーザーはログイン後にマイページへ
+    else
+      super
+    end
   end
 
   def after_sign_up_path_for(resource)
@@ -16,7 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [
       :name,
@@ -29,5 +34,10 @@ class ApplicationController < ActionController::Base
       :prefecture_id,
       :introduction
     ])
+  end
+
+  private
+  def skip_user_authentication?
+    devise_controller? || controller_path.start_with?("admin/")
   end
 end
