@@ -7,6 +7,8 @@ class User < ApplicationRecord
   belongs_to :prefecture, optional: true
   has_many :parks
   has_many :park_comments
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_parks, through: :favorites, source: :park
 
   def active_for_authentication?
     super && is_active?
