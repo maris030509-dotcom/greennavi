@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :parks do
     resources :park_comments, only: [:create, :edit, :update, :destroy]
+    resource :favorite, only: [:create, :destroy]
   end
 
   resources :users, only: [:edit, :update] do
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
       patch "withdraw"
     end
   end
+
+  resources :favorites, only: [:index]
 
   devise_for :users,
             path: "users", 
