@@ -569,3 +569,17 @@ Use Ctrl-C to stop
 [98b47cf6-c715-4798-8cfd-6335d6ca70cf] Processing by Devise::SessionsController#new as HTML
 [98b47cf6-c715-4798-8cfd-6335d6ca70cf]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
 [98b47cf6-c715-4798-8cfd-6335d6ca70cf] Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[4ac2a0f6-260e-459f-b577-35a82beb939d] Started GET "/" for 219.104.165.137 at 2026-10-09 06:03:35 +0000
+[4ac2a0f6-260e-459f-b577-35a82beb939d] Processing by HomesController#about as HTML
+[4ac2a0f6-260e-459f-b577-35a82beb939d]   Rendered layout layouts/application.html.erb (Duration: 12.2ms | GC: 0.0ms)
+[4ac2a0f6-260e-459f-b577-35a82beb939d] Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 7.7ms (4 queries, 0 cached) | GC: 0.0ms)
+[4e8753b5-d787-4e53-bef2-e1d832c28818] Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 06:03:35 +0000
+[4e8753b5-d787-4e53-bef2-e1d832c28818] Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+[4e8753b5-d787-4e53-bef2-e1d832c28818]   Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--35b3e0910d282c15d5fc72675687b7c7dba90f23", "filename"=>"Osaka_central_park"}
+[4e8753b5-d787-4e53-bef2-e1d832c28818] Redirected to http://13.230.40.246/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA2OjA4OjM1LjYzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a4cfac1ffd74ec86f0adb24d034502fc7c121edf/Osaka_central_park.png
+[4e8753b5-d787-4e53-bef2-e1d832c28818] Completed 302 Found in 2ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+[b7fd1328-1157-48cc-9284-c0d6642dd228] Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwbDIxdXJuYjZndnRlajllcTBtdGE4Mnd0aWhuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT3Nha2FfY2VudHJhbF9wYXJrLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ09zYWthX2NlbnRyYWxfcGFyay5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTEwLTA5VDA2OjA4OjM1LjYzMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a4cfac1ffd74ec86f0adb24d034502fc7c121edf/Osaka_central_park.png" for 219.104.165.137 at 2026-10-09 06:03:35 +0000
+[b7fd1328-1157-48cc-9284-c0d6642dd228] Processing by ActiveStorage::DiskController#show as PNG
+[b7fd1328-1157-48cc-9284-c0d6642dd228]   Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Osaka_central_park"}
+[b7fd1328-1157-48cc-9284-c0d6642dd228] Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+- Gracefully stopping, waiting for requests to finish
