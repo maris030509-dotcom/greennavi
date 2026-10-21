@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h3 class="mb-4">
+    🌿コミュニティ一覧🌿（全<%= @communities.count %>件）
+  </h3>
+
+  <div class="row">
+    <% @communities.each do |community| %>
+      <div class="col-md-3 mb-4">
+        <div class="card border-0">
+          <!-- コミュニティ情報 -->
+          <div class="card-body text-center">
+            <p>🌿<%= community.name %></p>
+            <p><%= community.body %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

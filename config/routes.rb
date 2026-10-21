@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "community_comments/edit"
   root "homes#about"
 
   get "search", to: "searches#index"
@@ -19,6 +20,12 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:index]
+
+  resources :communities, only: [:index, :show] do
+    resource :community_membership, only: [:create, :destroy]
+    resources :community_comments, only: [:create, :edit, :update, :destroy]
+  end
+
 
   devise_for :users,
             path: "users", 

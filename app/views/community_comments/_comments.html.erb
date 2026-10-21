@@ -1,0 +1,60 @@
+<div id="park_comments">
+  <div class="comments mt-4">
+    <h4 class="mb-3">
+      コメント (<%= community.community_comments.count %>)
+    </h4>
+
+    <% community.community_comments.order(created_at: :desc).each do |comment| %>
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <!--コメント投稿者表示名
+              　既存ユーザーはユーザー名　退会者は退会済ユーザー -->
+              <strong>
+                <% if comment.user.is_active %>
+                  <%= comment.user.name %>
+                <% else %>
+                  <span class="text-muted">退会済みユーザー</span>
+                <% end %>
+              </strong>
+            </div>
+
+            <small class="text-muted">
+              <%= l comment.created_at, format: :short %>
+            </small>
+          </div>
+          <!-- コメント表示とコメント編集・削除ボタン-->
+          <% if comment.is_active %>
+            <p class="mb-0">
+              <%= simple_format(comment.body) %>
+            </p>
+            <% if user_signed_in? && comment.user == current_user %>
+              <div class="text-end mt-3">
+
+                <%= link_to "編集",
+                    edit_community_community_comment_path(community, comment),
+                    class: "btn btn-success btn-sm me-2" %>
+
+                <%= link_to "削除",
+                    community_community_comment_path(park, comment),
+                    data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "コメントを削除しますか？"
+                    },
+                    class: "btn btn-danger btn-sm" %>
+              </div>
+            <% end %>
+          <% else %>
+            <!--削除コメントの表示　”このコメントは削除されました” -->
+            <p class="text-muted fst-italic mb-0">
+              このコメントは削除されました
+            </p>
+          <% end %>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

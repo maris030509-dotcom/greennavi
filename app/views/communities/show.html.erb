@@ -1,0 +1,27 @@
+<div class="container mt-5">
+
+  <div class="row">
+
+    <!--コミュニティ情報 -->
+    <div class="col-md-8">
+      <!-- コミュニティ名 -->
+      <h4 class="mb-2">🌿<%= @community.name %></h4>
+
+      <!-- コミュニティ説明 -->
+      <p class="mb-2"><%= @community.body %></p>
+      
+      <!-- コミュニティ参加者名・人数 -->
+      <p class="mb-2">参加者数：<%= community.community_membership.count %>
+      <p class="mb-2"><%= @community.community_membership.name %></p>
+
+      <!--コメント一覧 -->
+      <%= render "community_comments/comments",
+          community: @community %>
+      <!--コメント投稿 -->
+      <%= render "community_comments/form",
+          community: @community,
+          community_comment: @community_comment %>
+
+    </div>
+  </div>
+</div>
