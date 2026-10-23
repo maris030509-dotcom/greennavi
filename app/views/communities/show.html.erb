@@ -36,20 +36,21 @@
         <div class="card-header">
           参加メンバー (<%= @community.community_memberships.count %>人)
         </div>
-
-        <ul class="list-group list-group-flush">
-          <% @community.users.each do |user| %>
-            <li class="list-group-item">
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            <% @community.users.each do |user| %>
               <% if user.is_active %>
                 <%= link_to user.name,
                       user_path(user),
-                      class: "text-decoration-none" %>
+                      class: "badge text-bg-light text-decoration-none p-2" %>
               <% else %>
-                <span class="text-muted">退会済みユーザー</span>
+                <span class="badge text-bg-secondary p-2">
+                  退会済みユーザー
+                </span>
               <% end %>
-            </li>
-          <% end %>
-        </ul>
+            <% end %>
+          </div>
+        </div>
       </div>
 
     <!--コメント一覧 -->

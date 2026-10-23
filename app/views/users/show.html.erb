@@ -69,6 +69,33 @@
         </p>
       </div>
     <% end %>
+  </div>
+  <div class="mt-4">
+    <h5><%= @user.name%>さんの参加コミュニティ</h5>
 
+    <% if @communities.any? %>
+      <div class="row">
+        <% @communities.each do |community| %>
+          <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5>🌿</h5>
+
+                <%= link_to community.name,
+                            community_path(community),
+                            class: "text-decoration-none fw-bold" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    <% else %>
+      <div class="text-center py-5">
+        <p class="text-muted mb-0">
+          まだ参加しているコミュニティはありません
+        </p>
+      </div>
+    <% end %>
   </div>
 </div>
