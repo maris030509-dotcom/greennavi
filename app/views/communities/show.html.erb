@@ -1,0 +1,71 @@
+<div class="container mt-5">
+
+  <div class="row">
+
+    <!--コミュニティ情報 -->
+    <div class="col-md-8">
+      <!-- コミュニティ名 -->
+      <h4 class="mb-2">🌿<%= @community.name %></h4>
+
+      <!-- コミュニティ説明 -->
+      <p class="mb-2"><%= @community.introduction %></p>
+
+      <!-- 参加ボタン -->
+      <div class="mb-3">
+        <% if user_signed_in? %>
+          <% if current_user.communities.include?(@community) %>
+            <%= button_to "退会する",
+                community_community_membership_path(@community),
+                method: :delete,
+                class: "btn btn-outline-danger" %>
+          <% else %>
+            <%= button_to "参加する",
+                community_community_membership_path(@community),
+                method: :post,
+                class: "btn btn-success" %>
+          <% end %>
+        <% else %>
+          <%= link_to "ログインして参加",
+              new_user_session_path,
+              class: "btn btn-outline-success" %>
+        <% end %> 
+      </div>
+      
+      <!-- 参加者一覧 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          参加メンバー (<%= @community.community_memberships.count %>人)
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            <% @community.users.each do |user| %>
+              <% if user.is_active %>
+                <%= link_to user.name,
+                      user_path(user),
+                      class: "badge text-bg-light text-decoration-none p-2" %>
+              <% else %>
+                <span class="badge text-bg-secondary p-2">
+                  退会済みユーザー
+                </span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    <!--コメント一覧 -->
+      <%= render "community_comments/comments",
+          community: @community %>
+    <!--コメント投稿 -->
+      <% if @community.users.include?(current_user) %>
+        <%= render "community_comments/form",
+            community: @community,
+            community_comment: @community_comment %>
+      <% else %>
+        <div class="alert alert-info mt-3">
+          コメントを投稿するにはコミュニティへの参加が必要です。
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

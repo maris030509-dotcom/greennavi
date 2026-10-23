@@ -1,7 +1,13 @@
 <div class="container mt-5">
-  <h3 class="mb-4">
-    🌿公園一覧🌿（全<%= @parks.count %>件）
-  </h3>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">
+      🌿公園一覧🌿（全<%= @parks.count %>件）
+    </h3>
+
+    <%= link_to "+ 新規公園投稿",
+        new_park_path,
+        class: "btn btn-success" %>
+  </div>
 
   <div class="row">
     <% @parks.each do |park| %>

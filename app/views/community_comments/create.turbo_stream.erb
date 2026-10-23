@@ -1,0 +1,10 @@
+<%= turbo_stream.replace "community_comments" do %>
+  <%= render "community_comments/comments",
+      community: @community %>
+<% end %>
+
+<%= turbo_stream.replace "comment_form" do %>
+  <%= render "community_comments/form",
+      community: @community,
+      community_comment: CommunityComment.new %>
+<% end %>

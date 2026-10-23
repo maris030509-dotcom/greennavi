@@ -1,0 +1,40 @@
+<div class="container mt-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">
+      🌿コミュニティ一覧🌿（全<%= @communities.count %>件）
+    </h3>
+
+    <%= link_to "+ コミュニティ作成",
+        new_admin_community_path,
+        class: "btn btn-success" %>
+  </div>
+
+  <div class="row">
+    <% @communities.each do |community| %>
+      <div class="col-md-3 mb-4">
+        <div class="card border-0 h-100">
+          <div class="card-body text-center">
+            <p>
+              🌿
+              <%= link_to community.name, admin_community_path(community) %>
+            </p>
+            <!--コミュニティ紹介文は60文字まで表示 -->
+            <p class="community-introduction">
+              <%= truncate(community.introduction, length: 60) %>
+            </p>
+            <!--コミュニティの有効/停止を表示 -->
+            <p>
+              <% if community.is_active? %>
+                <span class="badge bg-success">有効</span>
+              <% else %>
+                <span class="badge bg-danger">停止中</span>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

@@ -1,25 +1,6 @@
 Rails.application.routes.draw do
   root "homes#about"
 
-  get "search", to: "searches#index"
-
-  resources :parks do
-    resources :park_comments, only: [:create, :edit, :update, :destroy]
-    resource :favorite, only: [:create, :destroy]
-  end
-
-  resources :users, only: [:edit, :update] do
-    collection do
-      get "my_page"
-      get "information"
-      get "information/edit", action: :edit
-      get "unsubscribe"
-      patch "withdraw"
-    end
-  end
-
-  resources :favorites, only: [:index]
-
   devise_for :users,
             path: "users", 
             controllers: {
@@ -39,7 +20,41 @@ Rails.application.routes.draw do
     resources :prefectures, only: [:index, :create, :edit, :update]
     resources :equipments, only: [:index, :create, :edit, :update]
     resources :playgrounds, only: [:index, :create, :edit, :update]
+    resources :communities
   end
+
+  resources :users, only: [:show, :edit, :update] do
+    collection do
+      get "my_page"
+      get "information"
+      get "information/edit", action: :edit
+      get "unsubscribe"
+      patch "withdraw"
+    end
+    member do
+      get :favorites
+    end
+  end
+
+  resources :parks do
+    resources :park_comments, only: [:create, :edit, :update, :destroy]
+    resource :favorite, only: [:create, :destroy]
+  end
+
+  resources :communities do
+    resources :community_comments, only: [:create, :edit, :update, :destroy]
+  end
+
+  resources :favorites, only: [:index]
+
+  resources :communities, only: [:index, :show] do
+    resource :community_membership, only: [:create, :destroy]
+    resources :community_comments, only: [:create, :edit, :update, :destroy]
+  end
+
+  get "search", to: "searches#index"
+
+  
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

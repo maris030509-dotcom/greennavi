@@ -34,7 +34,7 @@
   <header>
     <nav class="navbar navbar-expand-lg main-navbar border-bottom">
       <div class="container">
-
+        <!-- ロゴ -->
         <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag "logo.png",
               alt: "LOGO",
@@ -70,8 +70,8 @@
                 </li>
 
                 <li class="nav-item">
-                  <%= link_to "新規投稿",
-                      new_park_path,
+                  <%= link_to "コミュニティ一覧",
+                      communities_path,
                       class: "nav-link header-button" %>
                 </li>
 
@@ -91,6 +91,12 @@
                 <li class="nav-item">
                   <%= link_to "公園一覧",
                       parks_path,
+                      class: "nav-link header-button" %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "コミュニティ一覧",
+                      communities_path,
                       class: "nav-link header-button" %>
                 </li>
 

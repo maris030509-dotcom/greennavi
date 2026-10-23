@@ -1,0 +1,47 @@
+<div class="container mt-5">
+
+  <div class="row">
+
+    <!--コミュニティ情報 -->
+    <div class="col-md-8">
+      <!-- コミュニティ名 -->
+      <h4 class="mb-2">🌿<%= @community.name %></h4>
+      <!-- コミュニティ有効/停止　状態-->
+      <p>
+        <% if @community.is_active? %>
+          <span class="badge bg-success">有効</span>
+        <% else %>
+          <span class="badge bg-danger">停止中</span>
+        <% end %>
+      </p>
+
+      <!-- コミュニティ説明 -->
+      <p class="mb-2"><%= @community.introduction %></p>
+      
+      <!-- 参加者一覧 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          参加メンバー (<%= @community.community_memberships.count %>人)
+        </div>
+        <ul class="list-group list-group-flush">
+          <% @community.users.each do |user| %>
+            <li class="list-group-item">
+              <% if user.is_active %>
+                <%= link_to user.name,
+                      admin_user_path(user),
+                      class: "text-decoration-none" %>
+              <% else %>
+                <span class="text-muted">退会済みユーザー</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <%= link_to "編集する", edit_admin_community_path(@community), class: "btn btn-success btn-sm mt-2" %>
+
+    <!--コメント一覧 -->
+      <%= render "community_comments/comments",
+          community: @community %>
+    </div>
+  </div>
+</div>
