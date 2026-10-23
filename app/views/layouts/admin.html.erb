@@ -31,26 +31,28 @@
   </head>
 
   <!-- ヘッダー-->
-  <header class="py-3 border-bottom">
-    <div class="container d-flex justify-content-between align-items-center">
+  <header>
+    <nav class="navbar navbar-expand-lg main-navbar border-bottom">
 
-      <!-- ロゴ -->
-      <div class="logo">
-        <%= link_to admin_root_path do %>
-          <%= image_tag "logo.png", alt: "LOGO", style: "height:70px;" %>
+      <div class="container">
+        <!-- ロゴ -->
+        <%= link_to admin_root_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png",
+              alt: "LOGO",
+              class: "header-logo" %>
         <% end %>
-      </div>
 
-      <!-- ナビゲーション -->
-      <div class="d-flex align-items-center gap-3">
-          <%= link_to "ユーザー一覧", admin_users_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "公園一覧", admin_parks_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "都道府県一覧", admin_prefectures_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "設備一覧", admin_equipments_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "遊具一覧", admin_playgrounds_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "ログアウト", destroy_admin_session_path, data: { turbo_method: :delete}, class: "btn btn-outline-secondary" %>
+        <!-- ナビゲーション -->
+        <div class="d-flex align-items-center gap-3">
+            <%= link_to "ユーザー一覧", admin_users_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "公園一覧", admin_parks_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "コミュニティ一覧", admin_communities_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "都道府県一覧", admin_prefectures_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "設備一覧", admin_equipments_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "遊具一覧", admin_playgrounds_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "ログアウト", destroy_admin_session_path, data: { turbo_method: :delete}, class: "btn btn-outline-secondary" %>
+        </div>
       </div>
-    </div>
   </header>
 
   <body>

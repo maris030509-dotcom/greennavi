@@ -1,19 +1,32 @@
 <div class="container mt-5">
-  <h3 class="mb-4">
-    🌿コミュニティ一覧🌿（全<%= @communities.count %>件）
-  </h3>
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">
+      🌿コミュニティ一覧🌿（全<%= @communities.count %>件）
+    </h3>
+
+    <%= link_to "+ コミュニティ作成",
+        new_community_path,
+        class: "btn btn-success" %>
+  </div>
 
   <div class="row">
     <% @communities.each do |community| %>
       <div class="col-md-3 mb-4">
-        <div class="card border-0">
-          <!-- コミュニティ情報 -->
+        <div class="card border-0 h-100">
           <div class="card-body text-center">
-            <p>🌿<%= community.name %></p>
-            <p><%= community.body %></p>
+            <p>
+              🌿
+              <%= link_to community.name, community_path(community) %>
+            </p>
+            <!--コミュニティ紹介文は60文字まで表示 -->
+            <p class="community-introduction">
+              <%= truncate(community.introduction, length: 60) %>
+            </p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>

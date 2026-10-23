@@ -8,20 +8,63 @@
       <h4 class="mb-2">🌿<%= @community.name %></h4>
 
       <!-- コミュニティ説明 -->
-      <p class="mb-2"><%= @community.body %></p>
-      
-      <!-- コミュニティ参加者名・人数 -->
-      <p class="mb-2">参加者数：<%= community.community_membership.count %>
-      <p class="mb-2"><%= @community.community_membership.name %></p>
+      <p class="mb-2"><%= @community.introduction %></p>
 
-      <!--コメント一覧 -->
+      <!-- 参加ボタン -->
+      <div class="mb-3">
+        <% if user_signed_in? %>
+          <% if current_user.communities.include?(@community) %>
+            <%= button_to "退会する",
+                community_community_membership_path(@community),
+                method: :delete,
+                class: "btn btn-outline-danger" %>
+          <% else %>
+            <%= button_to "参加する",
+                community_community_membership_path(@community),
+                method: :post,
+                class: "btn btn-success" %>
+          <% end %>
+        <% else %>
+          <%= link_to "ログインして参加",
+              new_user_session_path,
+              class: "btn btn-outline-success" %>
+        <% end %> 
+      </div>
+      
+      <!-- 参加者一覧 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          参加メンバー (<%= @community.community_memberships.count %>人)
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <% @community.users.each do |user| %>
+            <li class="list-group-item">
+              <% if user.is_active %>
+                <%= link_to user.name,
+                      user_path(user),
+                      class: "text-decoration-none" %>
+              <% else %>
+                <span class="text-muted">退会済みユーザー</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    <!--コメント一覧 -->
       <%= render "community_comments/comments",
           community: @community %>
-      <!--コメント投稿 -->
-      <%= render "community_comments/form",
-          community: @community,
-          community_comment: @community_comment %>
-
+    <!--コメント投稿 -->
+      <% if @community.users.include?(current_user) %>
+        <%= render "community_comments/form",
+            community: @community,
+            community_comment: @community_comment %>
+      <% else %>
+        <div class="alert alert-info mt-3">
+          コメントを投稿するにはコミュニティへの参加が必要です。
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

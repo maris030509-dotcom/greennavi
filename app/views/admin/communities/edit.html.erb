@@ -1,0 +1,69 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+  <div class="card p-4 shadow-sm" style="width: 800px;">
+
+    <!-- タイトル  -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 class="mb-0">コミュニティ情報編集</h4>
+    </div>
+
+    <%= form_with model: [:admin, @community], method: :patch, local: true do |f| %>
+
+      <!-- バリデーションメッセージ -->
+      <% if @community.errors.any? %>
+        <div class="error-messages">
+          <h4><%= @community.errors.count %>件のエラーがあります</h4>
+          <ul>
+            <% @community.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <!-- コミュニティ名 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :name, "コミュニティ名", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+
+      <!-- コミュニティ紹介文 -->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :introduction, "コミュニティ紹介文", class: "form-label mb-0" %>
+        </div>
+        <div class="col-10">
+          <%= f.text_area :introduction, class: "form-control" %>
+        </div>
+      </div>
+
+      <!-- コミュニティ有効/停止-->
+      <div class="row mb-3">
+        <div class="col-2 d-flex align-items-center">
+          <%= f.label :is_active, "コミュニティ状態", class: "form-label d-block" %>
+        </div>
+        <div class="col-10 d-flex align-items-center">
+          <div class="form-check form-check-inline">
+            <%= f.radio_button :is_active, true, class: "form-check-input" %>
+            <%= f.label :is_active_true, "有効", class: "form-check-label" %>
+          </div>
+
+          <div class="form-check form-check-inline ms-3">
+            <%= f.radio_button :is_active, false, class: "form-check-input" %>
+            <%= f.label :is_active_false, "停止", class: "form-check-label" %>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 登録ボタン -->
+      <div class="text-center">
+        <%= f.submit "変更を保存", class: "btn btn-success px-5 py-2 fw-bold" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

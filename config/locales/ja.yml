@@ -21,6 +21,13 @@ ja:
         prefecture_id: 都道府県
         address: 公園住所
         park_image: 公園画像
+      park_comment:
+        body: コメント
+      community:
+        name: コミュニティ名
+        introduction: コミュニティ紹介文
+      community_comment:
+        body: コメント
 
     errors:
       messages:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_10_07_070710) do
+ActiveRecord::Schema[8.0].define(version: 2026_10_23_012553) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,10 +39,71 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_07_070710) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.string "name"
+    t.text "introduction"
+    t.boolean "is_active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "community_comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "community_id", null: false
+    t.text "body"
+    t.boolean "is_active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_community_comments_on_community_id"
+    t.index ["user_id"], name: "index_community_comments_on_user_id"
+  end
+
+  create_table "community_memberships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "community_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_community_memberships_on_community_id"
+    t.index ["user_id"], name: "index_community_memberships_on_user_id"
+  end
+
   create_table "equipment", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "park_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["park_id"], name: "index_favorites_on_park_id"
+    t.index ["user_id", "park_id"], name: "index_favorites_on_user_id_and_park_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "park_comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "park_id", null: false
+    t.text "body"
+    t.boolean "is_active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["park_id"], name: "index_park_comments_on_park_id"
+    t.index ["user_id"], name: "index_park_comments_on_user_id"
   end
 
   create_table "park_equipments", force: :cascade do |t|
@@ -97,16 +158,23 @@ ActiveRecord::Schema[8.0].define(version: 2026_10_07_070710) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefecture_id"
+    t.bigint "prefecture_id"
     t.string "name"
     t.text "introduction"
-    t.boolean "is_active"
+    t.boolean "is_active", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "community_comments", "communities"
+  add_foreign_key "community_comments", "users"
+  add_foreign_key "community_memberships", "communities"
+  add_foreign_key "community_memberships", "users"
+  add_foreign_key "favorites", "parks"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "park_comments", "parks"
+  add_foreign_key "park_comments", "users"
   add_foreign_key "park_equipments", "equipment"
   add_foreign_key "park_equipments", "parks"
   add_foreign_key "park_playgrounds", "parks"
