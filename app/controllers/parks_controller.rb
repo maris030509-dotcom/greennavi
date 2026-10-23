@@ -54,6 +54,12 @@ class ParksController < ApplicationController
     @playgrounds = Playground.all
   end
 
+  def ensure_correct_user
+    unless @park.user == current_user
+      redirect_to parks_path, notice: "権限がありません"
+    end
+  end
+
   def park_params
     params.require(:park).permit(
       :park_image, :name, :introduction, 

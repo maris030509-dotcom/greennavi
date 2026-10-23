@@ -68,5 +68,6 @@ gem "json", "~> 2.7"
 gem 'devise'
 
 gem 'dotenv-rails'
+gem 'geocoder'
 
 gem "solid_queue"

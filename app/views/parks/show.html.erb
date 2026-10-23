@@ -62,6 +62,16 @@
         <%= link_to "編集する", edit_park_path(@park),
           class: "btn btn-success btn-sm mt-2" %>
       <% end %>
+      <!--GoogleMap表示 -->
+      <div id="map"
+          data-lat="<%= @park.latitude %>"
+          data-lng="<%= @park.longitude %>"
+          style="height: 300px; width: 75%;">
+      </div>
+      <%= link_to "Googleマップで開く",
+        "https://www.google.com/maps/search/?api=1&query=#{@park.latitude},#{@park.longitude}",
+        target: :_blank,
+        class: "btn btn-outline-success" %>
 
       <!--コメント一覧 -->
       <%= render "park_comments/comments",
@@ -74,3 +84,4 @@
     </div>
   </div>
 </div>
+
