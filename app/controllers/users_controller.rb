@@ -6,10 +6,12 @@ class UsersController < ApplicationController
   def my_page
     #新しい投稿順に表示
     @parks = @user.parks.order(created_at: :desc)
+    @communities = @user.communities.order(created_at: :desc)
   end
 
   def show
     @parks = @user.parks.order(created_at: :desc)
+    @communities = @user.communities.order(created_at: :desc)
   end
 
   def edit
