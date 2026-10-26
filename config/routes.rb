@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     resources :prefectures, only: [:index, :create, :edit, :update]
     resources :equipments, only: [:index, :create, :edit, :update]
     resources :playgrounds, only: [:index, :create, :edit, :update]
-    resources :communities
+    resources :communities do
+      resources :community_comments, only: [:destroy]
+    end
   end
 
   resources :users, only: [:show, :edit, :update] do

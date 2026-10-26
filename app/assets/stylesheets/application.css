@@ -9,41 +9,65 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- * {
+:root {
+  --bg-color: #F7F5F0;
+  --card-bg: #FFFFFF;
+  --primary-color: #3B5339;
+  --primary-hover: #2B3E29;
+  --text-main: #2C3E35;
+  --border-color: #E5E0D8;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Montserrat', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  background-color: var(--bg-color) !important;
+  color: var(--text-main);
+}
+
 .main-navbar {
-  background-color: #dff7e8;
+  background-color: var(--card-bg) !important; 
+  border-bottom: 1px solid var(--border-color); 
+  box-shadow: 0 2px 8px rgba(44, 62, 53, 0.04); 
 }
 
 .header-logo {
-  height: 70px;
+  height: 80px;
 }
 
 a.header-button {
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  padding: 6px 12px !important;
+  border: 1px solid var(--border-color);
+  border-radius: 8px; 
+  padding: 8px 16px !important; 
   margin: 0 4px;
-  color: #495057 !important;
+  color: var(--primary-color) !important; 
+  background-color: transparent;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-size: 15px;
 }
 
 .header-button:hover {
-  background-color: #f8f9fa;
+  background-color: var(--primary-color) !important; 
+  color: #FFFFFF !important; 
+  border-color: var(--primary-color);
 }
 
+.hero-section {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-body {
-  font-family: 'Kosugi Maru', sans-serif !important;
-  background-color: #fff9e6 !important;
 }
 
-.hero-background{
+.hero-background {
   width: 80%;
   height: 100%;
   background-size: cover;
@@ -54,7 +78,6 @@ body {
 
 .hero-content {
   background-color: rgba(255, 255, 255, 0.8);
-  filter: brightness(0.8);
   border-radius: 12px;
   width: 80%;
   color: #2e7d32;
@@ -72,40 +95,125 @@ body {
   margin-bottom: 16px;
 }
 
-.card.step-card {
-  width: 260px;
+.section-title-line {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+  color: #3B5339;
+}
+
+.section-title-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 3px;
+  background-color: #3B5339; 
+  border-radius: 2px; 
+}
+
+.how-to-container {
+  max-width: 1000px;
+}
+
+.how-to-card {
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.how-to-icon {
+  font-size: 32px;
+  color: #198754;
+  margin-bottom: 16px;
+}
+
+.how-to-card .card-text {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.park-card {
+  height: 100%;
+  background-color: white;
   border-radius: 16px;
-  border: 2px solid #a5d6a7; 
-  background-color: #e3f6e3;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-  transition: 0.3s;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-.card-text {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-size: 16px;
-  color: #2e7d32;
-}
-
-.card-img-top {
-  height: 200px;
+.park-card-image {
+  width: 100%;
+  height: 180px;
   object-fit: cover;
+}
+
+.park-card-no-image {
+  height: 180px;
+  background-color: #efece6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #6c757d;
+}
+
+.park-card-no-image i {
+  font-size: 32px;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.park-card-body {
+  padding: 16px;
+  text-align: center;
+}
+
+.park-card-title {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2C3E35;
+}
+
+.park-card-details {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 4px;
 }
 
 .park-image {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .community-introduction {
   min-height: 72px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
 @media (max-width: 768px) {
+
+  .header-button {
+    border: none;
+    background: transparent;
+    padding: 8px 0 !important;
+    margin: 0;
+  }
+
+  .hero-section {
+    height: 220px;
+  }
+
+  .hero-background {
+    width: 95%;
+  }
 
   .hero-content {
     width: 95%;
@@ -116,17 +224,40 @@ body {
   }
 
   .hero-content h4 {
-    font-size: 1.2rem;
+    font-size: 20px;
   }
 
   .hero-content h6 {
-    font-size: 0.9rem;
+    font-size: 15px;
   }
 
-  .header-button {
-    border: none;
-    background: transparent;
-    padding: 8px 0 !important;
-    margin: 0;
+  .section-title-line {
+    font-size: 24px;
   }
+
+  .how-to-card {
+    padding: 16px;
+  }
+
+  .how-to-icon {
+    font-size: 28px;
+  }
+
+  .how-to-card .card-text {
+    font-size: 15px;
+  }
+
+  .park-card-image,
+  .park-card-no-image {
+    height: 160px;
+  }
+
+  .park-card-title {
+    font-size: 15px;
+  }
+
+  .park-card-detail {
+    font-size: 13px;
+  }
+
 }

@@ -1,55 +1,62 @@
-<div class="mt-4">
-    <h5>お気に入りの公園</h5>
-    <% if @favorite_parks.present? %>
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>公園</th>
-            <th>住所</th>
-            <th></th>
-          </tr>
-        </thead>
+<div class="container my-4">
+  <h5 class="mb-4 fw-bold text-dark" style="letter-spacing: 0.05em;">お気に入りの公園</h5>
+  
+  <% if @favorite_parks.present? %>
+    <div class="row g-4">
+      <% @favorite_parks.each do |park| %>
+        <div class="col-12 col-md-6 col-lg-4">
+          
+          <div class="card h-75 border-0 shadow-sm park-card">
+            
+            <!-- 写真エリア（リンク） -->
+            <%= link_to park_path(park), class: "text-decoration-none position-relative overflow-hidden d-block" do %>
+              <% if park.park_image.attached? %>
+                <%= image_tag park.park_image, 
+                  class: "card-img-top park-image", 
+                  alt: park.name %>
+              <% else %>
+                <%= image_tag "no_image.png", 
+                  class: "card-img-top park-image", 
+                  alt: park.name %>
+              <% end %>
+            <% end %>
 
-        <tbody>
-          <% @favorite_parks.each do |park| %>
-            <tr>
-              <td>
-                <!--公園写真 -->
-                <%= link_to park_path(park) do %>
-                  <div class="text-center">
-                    <% if park.park_image.attached? %>
-                      <%= image_tag park.park_image, 
-                        class: "card-img-top", 
-                        style: "width:80px; height:80px;",
-                        alt: park.name %>
-                    <% else %>
-                      <%= image_tag "no_image.png", 
-                      class: "card-img-top", 
-                      style: "width:80px; height:80px;", 
-                      alt: park.name %>
-                    <% end %>
-                    <!--公園名 -->
-                    <div><%= park.name %></div>
-                  </div>
-               <% end %>
-              </td>
-              <!--都道府県/住所 -->
-              <td><%= park.prefecture.name %><%= park.address %></td>
-              <td>
-                <%= button_to "♥解除",
-                  park_favorite_path(park),
-                  method: :delete,
-                  class: "btn btn-outline-danger btn-sm" %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% else %>
-      <div class="text-center py-5">
-        <p class="text-muted mb-0">
-          まだお気に入りはありません
-        </p>
-      </div>
-    <% end %>
-  </div>
+            <!-- カード本文エリア -->
+            <div class="card-body d-flex flex-column p-4 bg-white">
+              
+              <!-- 公園名 -->
+              <h5 class="card-title fw-bold mb-2">
+                <%= link_to park.name, park_path(park), class: "text-decoration-none text-dark" %>
+              </h5>
+              
+              <!-- 住所 -->
+              <p class="card-text text-muted small mb-4 d-flex align-items-center gap-1">
+                <%= park.prefecture.name %><%= park.address %>
+              </p>
+
+              <!-- ♥解除ボタン-->
+              <div class="mt-auto">
+                <% if @show_unfavorite_button && current_user.favorited?(park) %>
+                  <%= button_to park_favorite_path(park),
+                    method: :delete,
+                    class: "btn btn-outline-danger btn-sm w-100 rounded-pill py-2" do %>
+                    ♥ お気に入り解除
+                  <% end %>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
+    <div class="text-center py-5">
+      <p class="text-muted mb-0">
+        まだお気に入りはありません
+      </p>
+    </div>
+  <% end %>
+</div>

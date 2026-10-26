@@ -19,28 +19,28 @@
       <p class="mb-2"><%= @community.introduction %></p>
       
       <!-- 参加者一覧 -->
-      <div class="card mb-4">
-        <div class="card-header">
-          参加メンバー (<%= @community.community_memberships.count %>人)
-        </div>
-        <ul class="list-group list-group-flush">
-          <% @community.users.each do |user| %>
-            <li class="list-group-item">
+      <div class="pt-3 border-top">
+          <h6 class="text-muted small fw-bold mb-3">
+            <i class="fa-solid fa-users me-1 text-success"></i>参加メンバー (<%= @community.community_memberships.count %>人)
+          </h6>
+          <div class="d-flex flex-wrap gap-2">
+            <% @community.users.each do |user| %>
               <% if user.is_active %>
                 <%= link_to user.name,
                       admin_user_path(user),
-                      class: "text-decoration-none" %>
+                      class: "badge bg-light text-dark border text-decoration-none px-3 py-2 rounded-pill fw-normal" %>
               <% else %>
-                <span class="text-muted">退会済みユーザー</span>
+                <span class="badge bg-secondary text-white px-3 py-2 rounded-pill fw-normal">
+                  退会済みユーザー
+                </span>
               <% end %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+            <% end %>
+          </div>
+        </div>
       <%= link_to "編集する", edit_admin_community_path(@community), class: "btn btn-success btn-sm mt-2" %>
 
     <!--コメント一覧 -->
-      <%= render "community_comments/comments",
+      <%= render "admin/community_comments/comments",
           community: @community %>
     </div>
   </div>

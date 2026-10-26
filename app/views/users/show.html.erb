@@ -1,101 +1,112 @@
-<div class="container mt-5">
-  <h2 class="mb-4"><%= @user.name%>さんの詳細情報</h2>
+<div class="container my-5" style="max-width: 900px;">
 
-  <table class="table table-bordered">
-    <tr>
-      <th>ユーザー名</th>
-      <td><%= @user.name %></td>
-    </tr>
-    <tr>
-      <th>都道府県</th>
-      <td><%= @user.prefecture.name %></td>
-    </tr>
-    <tr>
-      <th>自己紹介文</th>
-      <td><%= @user.introduction %></td>
-    </tr>
-  </table>
-
-  <%= link_to "♥ #{@user.name}さんのお気に入りの公園を見る",
-    favorites_user_path(@user),
-    class: "btn btn-outline-success" %>
-
-  <div class="mt-4">
-    <h5><%= @user.name%>さんの投稿一覧</h5>
-    <% if @parks.present? %>
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>公園名</th>
-            <th>住所</th>
-            <th>登録日</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @parks.each do |park| %>
-            <tr>
-              <td>
-                <!--公園写真 -->
-                <%= link_to park_path(park) do %>
-                  <div class="text-center">
-                    <% if park.park_image.attached? %>
-                      <%= image_tag park.park_image, 
-                        class: "card-img-top", 
-                        style: "width:80px; height:80px;",
-                        alt: park.name %>
-                    <% else %>
-                      <%= image_tag "no_image.png", 
-                      class: "card-img-top", 
-                      style: "width:80px; height:80px;", 
-                      alt: park.name %>
-                    <% end %>
-                    <!--公園名 -->
-                    <div><%= park.name %></div>
-                  </div>
-               <% end %>
-              </td>
-              <!--都道府県/住所 -->
-              <td><%= park.prefecture.name %><%= park.address %></td>
-              <td><%= park.created_at.to_date %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% else %>
-      <div class="text-center py-5">
-        <p class="text-muted mb-0">
-          まだ投稿はありません
-        </p>
-      </div>
-    <% end %>
+  <!-- ページタイトル -->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold section-title-line" style="color: #2C3E35;"><%= @user.name%></h2>
   </div>
-  <div class="mt-4">
-    <h5><%= @user.name%>さんの参加コミュニティ</h5>
 
-    <% if @communities.any? %>
-      <div class="row">
-        <% @communities.each do |community| %>
-          <div class="col-md-4 mb-3">
-            <div class="card h-100 shadow-sm border-0">
-              <div class="card-body text-center">
-                <h5>🌿</h5>
+  <!-- 登録情報 -->
+  <div class="card border-0 shadow-sm rounded-4 p-4 mb-5" style="background-color: #FFFFFF;">
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
+      <h4 class="mb-0 fw-bold fs-5" style="color: #3B5339;">
+        <i class="fa-regular fa-user me-2"></i><%= @user.name%>さんの登録情報
+      </h4>
+    </div>
 
-                <%= link_to community.name,
-                            community_path(community),
-                            class: "text-decoration-none fw-bold" %>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">ユーザー名</span>
+          <span class="fw-bold text-dark"><%= @user.name %></span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">都道府県</span>
+          <span class="fw-bold text-dark"><%= @user.prefecture&.name || "未設定" %></span>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">自己紹介文</span>
+          <p class="mb-0 text-dark" style="white-space: pre-wrap;"><%= @user.introduction.presence || "自己紹介文はまだありません。" %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- お気に入りボタン -->
+    <div class="mt-4 text-center">
+      <%= link_to favorites_user_path(@user), class: "btn btn-success px-4 py-2 rounded-pill shadow-sm" do %>
+        <i class="fa-solid fa-heart me-2 text-danger"></i><%= @user.name%>さんのお気に入りの公園を見る
+      <% end %>
+    </div>
+  </div>
+
+  <!-- 投稿一覧 -->
+  <div class="mb-5">
+    <h3 class="fw-bold fs-4 mb-4 section-title-line" style="color: #3B5339;">🌿 <%= @user.name%>さんの投稿一覧</h3>
+    
+    <% if @parks.present? %>
+      <div class="row g-4">
+        <% @parks.each do |park| %>
+          <div class="col-12 col-md-6">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-5">
+                  <%= link_to park_path(park) do %>
+                    <% if park.park_image.attached? %>
+                      <%= image_tag park.park_image, class: "img-fluid h-100 object-fit-cover w-100", alt: park.name %>
+                    <% else %>
+                      <div class="no-image-wrapper h-100 d-flex flex-column align-items-center justify-content-center text-muted" style="min-height: 120px; background-color: #EFECE6;">
+                        <i class="fa-regular fa-image fa-lg mb-1 opacity-50"></i>
+                        <span class="small" style="font-size: 0.75rem;">No Image</span>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="col-7 d-flex flex-column justify-content-center p-3">
+                  <h5 class="card-title fw-bold fs-6 mb-1">
+                    <%= link_to park_path(park), class: "text-decoration-none text-dark" do %>
+                      <%= park.name %>
+                    <% end %>
+                  </h5>
+                  <p class="card-text text-muted small mb-1"><%= park.address %></p>
+                  <p class="card-text text-muted" style="font-size: 0.75rem;"><%= park.created_at.strftime('%Y-%m-%d') %></p>
+                </div>
               </div>
             </div>
           </div>
         <% end %>
       </div>
-
     <% else %>
-      <div class="text-center py-5">
-        <p class="text-muted mb-0">
-          まだ参加しているコミュニティはありません
-        </p>
+      <div class="text-center py-4 bg-white rounded-4 shadow-sm text-muted">
+        <p class="mb-0">まだ公園を投稿していません</p>
       </div>
     <% end %>
+  </div>
+
+  <!-- 参加コミュニティセクション -->
+  <div class="mb-4">
+    <h3 class="fw-bold fs-4 mb-4 section-title-line" style="color: #3B5339;">🌿 <%= @user.name%>さんの参加コミュニティ</h3>
+    
+    <!-- コミュニティ一覧のカードやリスト -->
+    <div class="row g-3">
+      <% if defined?(@communities) && @communities.present? %>
+        <% @communities.each do |community| %>
+          <div class="col-12 col-sm-4">
+            <div class="card border-0 shadow-sm rounded-4 p-3 text-center bg-white h-100">
+              <i class="fa-solid fa-leaf text-success mb-2"></i>
+              <h6 class="fw-bold mb-0"><%= link_to community.name, community_path(community), class: "text-decoration-none text-dark" %></h6>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="col-12">
+          <div class="p-4 bg-white rounded-4 shadow-sm text-center text-muted">
+            <p class="mb-0">参加しているコミュニティはありません</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

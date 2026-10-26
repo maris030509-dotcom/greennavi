@@ -1,47 +1,127 @@
-<h4 class="fw-bold mb-4">
-  <%= @user.name %>さんの詳細情報
-</h4>
+<div class="container my-5" style="max-width: 900px;">
+  <!-- 登録情報 -->
+  <div class="card border-0 shadow-sm rounded-4 p-4 mb-5" style="background-color: #FFFFFF;">
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
+      <h4 class="mb-0 fw-bold fs-5" style="color: #3B5339;">
+        <i class="fa-regular fa-user me-2"></i><%= @user.name%>さんの登録情報
+      </h4>
+    </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-
-      <table class="table table-borderless align-middle">
-        <tbody>
-          <tr>
-            <th class="text-start" style="width: 150px;">ユーザーID</th>
-            <td><%= @user.id %></td>
-          </tr>
-          <tr>
-            <th class="text-start">ユーザー名</th>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <th class="text-start">メールアドレス</th>
-            <td><%= @user.email %></td>
-          </tr>
-          <tr>
-            <th class="text-start">都道府県</th>
-            <td><%= @user.prefecture.name %></td>
-          </tr>
-          <tr>
-            <th class="text-start">自己紹介文</th>
-            <td><%= @user.introduction %></td>
-          </tr>
-          <tr>
-            <th class="text-start">会員ステータス</th>
-            <td class="<%= @user.is_active ? 'text-success fw-bold' : 'text-secondary' %>">
-              <%= @user.is_active ? "有効" : "退会" %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="mt-4 d-flex gap-3">
-        <%= link_to "編集する",
-          edit_admin_user_path(@user),
-          class: "btn btn-success text-white px-4 py-2" %>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">ユーザーID</span>
+          <span class="fw-bold text-dark"><%= @user.id %></span>
+        </div>
       </div>
+      <div class="col-md-6">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">ユーザー名</span>
+          <span class="fw-bold text-dark"><%= @user.name %></span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">メールアドレス</span>
+          <span class="fw-bold text-dark"><%= @user.email %></span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">都道府県</span>
+          <span class="fw-bold text-dark"><%= @user.prefecture&.name || "未設定" %></span>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">自己紹介文</span>
+          <p class="mb-0 text-dark" style="white-space: pre-wrap;"><%= @user.introduction.presence || "自己紹介文はまだありません。" %></p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-3 rounded-3" style="background-color: #F7F5F0;">
+          <span class="text-muted small d-block mb-1">ユーザーステータス</span>
+          <p class="<%= @user.is_active ? 'text-success fw-bold' : 'text-secondary' %>">
+            
+            <%= @user.is_active ? "有効" : "退会" %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 編集ボタン -->
+    <div class="mt-4 text-center">
+      <%= link_to "編集する",
+        edit_admin_user_path(@user),
+        class: "btn btn-success text-white px-4 py-2" %>
+    </div>
+  </div>
+
+  <!-- 投稿一覧 -->
+  <div class="mb-5">
+    <h5 class="fw-bold fs-4 mb-4" style="color: #3B5339;"> <%= @user.name%>さんの投稿一覧</h5>
+    
+    <% if @parks.present? %>
+      <div class="row g-4">
+        <% @parks.each do |park| %>
+          <div class="col-12 col-md-6">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-5">
+                  <%= link_to park_path(park) do %>
+                    <% if park.park_image.attached? %>
+                      <%= image_tag park.park_image, class: "img-fluid h-100 object-fit-cover w-100", alt: park.name %>
+                    <% else %>
+                      <div class="no-image-wrapper h-100 d-flex flex-column align-items-center justify-content-center text-muted" style="min-height: 120px; background-color: #EFECE6;">
+                        <i class="fa-regular fa-image fa-lg mb-1 opacity-50"></i>
+                        <span class="small" style="font-size: 0.75rem;">No Image</span>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="col-7 d-flex flex-column justify-content-center p-3">
+                  <h5 class="card-title fw-bold fs-6 mb-1">
+                    <%= link_to park_path(park), class: "text-decoration-none text-dark" do %>
+                      <%= park.name %>
+                    <% end %>
+                  </h5>
+                  <p class="card-text text-muted small mb-1"><%= park.address %></p>
+                  <p class="card-text text-muted" style="font-size: 0.75rem;"><%= park.created_at.strftime('%Y-%m-%d') %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="text-center py-4 bg-white rounded-4 shadow-sm text-muted">
+        <p class="mb-0">まだ公園を投稿していません</p>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- 参加コミュニティセクション -->
+  <div class="mb-4">
+    <h5 class="fw-bold fs-4 mb-4" style="color: #3B5339;"> <%= @user.name%>さんの参加コミュニティ</h5>
+    
+    <!-- コミュニティ一覧のカードやリスト -->
+    <div class="row g-3">
+      <% if defined?(@communities) && @communities.present? %>
+        <% @communities.each do |community| %>
+          <div class="col-12 col-sm-4">
+            <div class="card border-0 shadow-sm rounded-4 p-3 text-center bg-white h-100">
+              <i class="fa-solid fa-leaf text-success mb-2"></i>
+              <h6 class="fw-bold mb-0"><%= link_to community.name, community_path(community), class: "text-decoration-none text-dark" %></h6>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="col-12">
+          <div class="p-4 bg-white rounded-4 shadow-sm text-center text-muted">
+            <p class="mb-0">参加しているコミュニティはありません</p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

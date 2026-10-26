@@ -20,6 +20,11 @@ class User < ApplicationRecord
   def inactive_message
     is_active? ? super : :inactive_account
   end
+  
+  def favorited?(park)
+    favorites.exists?(park_id: park.id)
+  end
+
 
   validates :name, presence: true
   validates :prefecture_id, presence: true
