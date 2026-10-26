@@ -1,78 +1,90 @@
-<div class="hero-section d-flex justify-content-center align-items-center" style="height: 300px; position: relative;">
-  <!-- 背景レイヤー -->
-  <div class="hero-background"
-       style="background-image: url(<%= asset_path 'top-image.png' %>);">
-  </div>
-
-  <!-- テキスト部分 -->
+<!--ヒーロー画像 -->
+<div class="hero-section mb-5">
+  <div class="hero-background" style="background-image: url(<%= asset_path 'top-image.png' %>);"></div>
   <div class="hero-content position-absolute text-center">
-    <%= image_tag "title.png",
-      alt: "GreenNaviロゴ",
-      class: "hero-logo" %>
-    <h4>みんなでつくる、<br class="d-md-none">
-      みんなの公園情報サイト
+    <%= image_tag "title.png", alt: "GreenNaviロゴ", class: "hero-logo" %>
+    <h4>みんなでつくる、
+      <br class="d-md-none">みんなの公園情報サイト
     </h4>
     <h6>”お気に入りの公園”を見つけよう</h6>
   </div>
-
 </div>
+<!--サイトの使い方 -->
+<div class="container my-5 how-to-container">
+  <section class="how-to-section text-center py-4 mb-5">
+    <h3 class="mb-4 fw-bold section-title-line">-HOW TO USE-</h3>
+    <div class="row justify-content-center g-4">
 
-<section class="how-to-section text-center py-4">
-  <h3 class="mb-4">ー🌿サイトの使い方🌿ー</h3>
-
-  <div class="d-flex justify-content-center flex-wrap gap-4">
-
-    <div class="card step-card p-3">
-      <div class="card-body">
-        <i class="fa-solid fa-magnifying-glass-location fa-2x text-success mb-3"></i>
-        <p class="card-text">公園を検索してみよう</p>
+      <div class="col-12 col-sm-4">
+        <div class="how-to-card">
+          <div class="card-body">
+            <i class="fa-solid fa-magnifying-glass-location how-to-icon"></i>
+            <p class="card-text">公園を検索</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="card step-card p-3">
-      <div class="card-body">
-        <i class="fa-solid fa-photo-film fa-2x text-success mb-3"></i>
-        <p class="card-text">写真や設備をチェック</p>
+      <div class="col-12 col-sm-4">
+        <div class="how-to-card">
+          <div class="card-body">
+            <i class="fa-solid fa-photo-film how-to-icon"></i>
+            <p class="card-text">写真や設備をチェック</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="card step-card p-3">
-      <div class="card-body">
-        <i class="fa-solid fa-comments fa-2x text-success mb-3"></i>
-        <p class="card-text">コミュニティで情報交換</p>
+      <div class="col-12 col-sm-4">
+        <div class="how-to-card">
+          <div class="card-body">
+            <i class="fa-solid fa-comments how-to-icon"></i>
+            <p class="card-text">コミュニティで情報交換</p>
+          </div>
+        </div>
       </div>
-    </div>
 
+    </div>
+  </section>
+
+  <!--新着公園一覧　4つまで表示 -->
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <h3 class="mb-0 fw-bold section-title-line">
+      🌿-NEW-🌿
+    </h3>
+    <div class="ms-3">
+      <%= link_to "すべて見る", parks_path, class: "btn btn-outline-success btn-sm rounded-pill px-3" %>
+    </div>
   </div>
-</section>
 
-<div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
-  <h3 class="mb-4 d-flex align-items-center gap-3">
-    <span>🌿新着公園🌿</span>
-
-    <%= link_to "すべて見る",
-        parks_path,
-        class: "btn btn-outline-success btn-sm" %>
-  </h3>
-</div>
-  <div class="row">
+  <div class="row g-4 justify-content-center mb-5">
     <% @parks.first(4).each do |park| %>
-      <div class="col-12 col-sm-6 col-lg-3 mb-4">
-        <div class="card h-100">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="park-card">
           <%= link_to park_path(park) do %>
             <% if park.park_image.attached? %>
-              <%= image_tag park.park_image, class: "card-img-top", alt: park.name %>
+              <%= image_tag park.park_image,
+                class: "park-card-image",
+                alt: park.name %>
             <% else %>
-              <%= image_tag "no_image.png", class: "card-img-top", alt: park.name %>
+              <div class="park-card-no-image">
+                <i class="fa-regular fa-image"></i>
+                <span>No Image</span>
+              </div>
             <% end %>
           <% end %>
-          <div class="card-body text-center">
-            <h5 class="card-title">🌿<%= park.name %></h5>
-            <p class="card-details"><%= park.prefecture.name %></p>
-            <p class="card-details"><%= park.address %></p>
+          <div class="park-card-body">
+            <h5 class="park-card-title">
+              <%= park.name %>
+            </h5>
+            <p class="park-card-details">
+              <%= park.prefecture&.name %>
+            </p>
+            <p class="park-card-details">
+              <%= park.address %>
+            </p>
           </div>
         </div>
       </div>
     <% end %>
-  </div>    
+  </div>
+
 </div>

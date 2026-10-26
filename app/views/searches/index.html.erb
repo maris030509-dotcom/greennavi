@@ -1,7 +1,6 @@
-<div class="container py-4">
-
+<div class="container my-5" style="max-width: 1000px;">
   <div class="mb-4">
-    <h2 class="fw-bold">
+    <h2 class="fw-bold text-success-custom">
       検索結果
     </h2>
 
@@ -14,73 +13,44 @@
   </div>
 
   <% if @parks.any? %>
-
-    <div class="card shadow-sm">
-      <div class="card-body p-0">
-
-        <table class="table table-hover align-middle mb-0">
-          <thead class="table-success">
-            <tr>
-              <th style="width: 150px;">画像</th>
-              <th>公園名</th>
-              <th>都道府県</th>
-              <th>住所</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @parks.each do |park| %>
-              <tr>
-                <td>
-                  <%= link_to park_path(park) do %>
-                    <% if park.park_image.attached? %>
-                      <%= image_tag park.park_image,
-                          class: "img-thumbnail search-park-image" %>
-                    <% else %>
-                      <%= image_tag "no_image.png",
-                          class: "img-thumbnail search-park-image" %>
-                    <% end %>
-                  <% end %>
-                </td>
-
-                <td>
-                  <%= link_to park.name,
-                      park_path(park),
-                      class: "fw-bold text-decoration-none" %>
-                </td>
-
-                <td>
-                  <%= park.prefecture.name%>
-                </td>
-
-                <td>
-                  <%= park.address %>
-                </td>
-              </tr>
+    <div class="row g-4 justify-content-start mb-5">
+      <% @parks.each do |park| %>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+            
+            <!-- 画像部分 -->
+            <%= link_to park_path(park) do %>
+              <% if park.park_image.attached? %>
+                <%= image_tag park.park_image, class: "card-img-top object-fit-cover", height: "180", alt: park.name %>
+              <% else %>
+                <div class="no-image-wrapper d-flex flex-column align-items-center justify-content-center text-muted" style="height: 180px; background-color: #EFECE6;">
+                  <i class="fa-regular fa-image fa-2x mb-2 opacity-50"></i>
+                  <span class="small">No Image</span>
+                </div>
+              <% end %>
             <% end %>
-          </tbody>
-
-        </table>
-
-      </div>
+          
+          
+            <!-- カード本文 -->
+            <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title fw-bold fs-6 mb-2" style="color: #2C3E35;">
+                  <%= link_to park.name, park_path(park), class: "text-decoration-none text-dark" %>
+                </h5>
+                <p class="card-text text-muted small mb-1"><%= park.prefecture&.name %></p>
+                <p class="card-text text-muted small mb-3" style="font-size: 0.8rem;"><%= park.address %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-
   <% else %>
-
-    <div class="card shadow-sm">
-      <div class="card-body text-center py-5">
-
-        <h4 class="mb-3">
-          検索結果が見つかりませんでした
-        </h4>
-
+    <div class="text-center py-5 bg-white rounded-4 shadow-sm text-muted">
+      <p class="mb-0">検索結果が見つかりませんでした</p>
         <p class="text-muted">
-          キーワードを変更して再度検索してください。
+          キーワードを変更して再度検索してください
         </p>
-
-      </div>
     </div>
-
   <% end %>
-
 </div>

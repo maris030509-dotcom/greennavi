@@ -5,9 +5,9 @@
     <!-- 左：公園画像 -->
     <div class="col-md-4">
       <% if @park.park_image.attached? %>
-        <%= image_tag @park.park_image, class: "card-img-top", alt: @park.name %>
+        <%= image_tag @park.park_image, class: "park-image", alt: @park.name %>
       <% else %>
-        <%= image_tag "no_image.png", class: "card-img-top", alt: @park.name %>
+        <%= image_tag "no_image.png", class: "park-image", alt: @park.name %>
       <% end %>
     </div>
 

@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 
   def favorites
     @favorite_parks = @user.favorite_parks
+    @show_unfavorite_button = current_user == @user
   end
 
   private

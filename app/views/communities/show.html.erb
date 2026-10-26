@@ -1,71 +1,97 @@
-<div class="container mt-5">
+<!--コメント投稿のバリエーションメッセージ -->
+<% if @community_comment.errors.any? %>
+  <div class="alert alert-danger">
+    <ul class="mb-0">
+      <% @community_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
-  <div class="row">
+<div class="container my-5" style="max-width: 900px;">
+  <div class="row justify-content-center">
 
-    <!--コミュニティ情報 -->
-    <div class="col-md-8">
-      <!-- コミュニティ名 -->
-      <h4 class="mb-2">🌿<%= @community.name %></h4>
+    <!-- コミュニティ情報・コメントエリア -->
+    <div class="col-12 col-md-10">
 
-      <!-- コミュニティ説明 -->
-      <p class="mb-2"><%= @community.introduction %></p>
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-5 bg-white">
+        
+        <!-- コミュニティ名 -->
+        <h3 class="fw-bold mb-3" style="color: #2C3E35;">
+          🌿 <%= @community.name %>
+        </h3>
 
-      <!-- 参加ボタン -->
-      <div class="mb-3">
-        <% if user_signed_in? %>
-          <% if current_user.communities.include?(@community) %>
-            <%= button_to "退会する",
-                community_community_membership_path(@community),
-                method: :delete,
-                class: "btn btn-outline-danger" %>
+        <!-- コミュニティ説明 -->
+        <p class="text-muted mb-4" style="line-height: 1.7; white-space: pre-wrap;"><%= @community.introduction %></p>
+
+        <!-- 参加 / 退会ボタン -->
+        <div class="mb-4">
+          <% if user_signed_in? %>
+            <% if current_user.communities.include?(@community) %>
+              <%= button_to "退会する",
+                  community_community_membership_path(@community),
+                  method: :delete,
+                  class: "btn btn-outline-danger btn-sm rounded-pill px-4" %>
+            <% else %>
+              <%= button_to "参加する",
+                  community_community_membership_path(@community),
+                  method: :post,
+                  class: "btn btn-success btn-sm rounded-pill px-4 shadow-sm" %>
+            <% end %>
           <% else %>
-            <%= button_to "参加する",
-                community_community_membership_path(@community),
-                method: :post,
-                class: "btn btn-success" %>
-          <% end %>
-        <% else %>
-          <%= link_to "ログインして参加",
-              new_user_session_path,
-              class: "btn btn-outline-success" %>
-        <% end %> 
-      </div>
-      
-      <!-- 参加者一覧 -->
-      <div class="card mb-4">
-        <div class="card-header">
-          参加メンバー (<%= @community.community_memberships.count %>人)
+            <%= link_to "ログインして参加",
+                new_user_session_path,
+                class: "btn btn-outline-success btn-sm rounded-pill px-4" %>
+          <% end %> 
         </div>
-        <div class="card-body">
+        
+        <!-- 参加者一覧 -->
+        <div class="pt-3 border-top">
+          <h6 class="text-muted small fw-bold mb-3">
+            <i class="fa-solid fa-users me-1 text-success"></i>参加メンバー (<%= @community.community_memberships.count %>人)
+          </h6>
           <div class="d-flex flex-wrap gap-2">
             <% @community.users.each do |user| %>
               <% if user.is_active %>
                 <%= link_to user.name,
                       user_path(user),
-                      class: "badge text-bg-light text-decoration-none p-2" %>
+                      class: "badge bg-light text-dark border text-decoration-none px-3 py-2 rounded-pill fw-normal" %>
               <% else %>
-                <span class="badge text-bg-secondary p-2">
+                <span class="badge bg-secondary text-white px-3 py-2 rounded-pill fw-normal">
                   退会済みユーザー
                 </span>
               <% end %>
             <% end %>
           </div>
         </div>
+
       </div>
 
-    <!--コメント一覧 -->
-      <%= render "community_comments/comments",
-          community: @community %>
-    <!--コメント投稿 -->
-      <% if @community.users.include?(current_user) %>
-        <%= render "community_comments/form",
-            community: @community,
-            community_comment: @community_comment %>
-      <% else %>
-        <div class="alert alert-info mt-3">
-          コメントを投稿するにはコミュニティへの参加が必要です。
+      <div class="mb-5">
+        <h4 class="fw-bold fs-5 mb-4 section-title-line" style="color: #3B5339;">
+          <i class="fa-regular fa-comments me-2"></i>みんなのコメント
+        </h4>
+
+        <!-- コメント一覧 -->
+        <div class="mb-4">
+          <%= render "community_comments/comments", community: @community %>
         </div>
-      <% end %>
+
+        <!-- コメント投稿 -->
+        <% if user_signed_in? && @community.users.include?(current_user) %>
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mt-4">
+            <%= render "community_comments/form",
+                community: @community,
+                community_comment: @community_comment %>
+          </div>
+        <% else %>
+          <div class="alert alert-light border-0 shadow-sm rounded-4 text-center text-muted py-4 mt-3">
+            <i class="fa-solid fa-lock me-1"></i> コメントを投稿するにはコミュニティへの参加が必要です。
+          </div>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>

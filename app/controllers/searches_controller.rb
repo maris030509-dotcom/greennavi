@@ -6,8 +6,9 @@ class SearchesController < ApplicationController
     @parks = if @keyword.present?
               Park.joins(:prefecture)
                   .where(
-                    "parks.name LIKE :keyword OR prefectures.name LIKE :keyword",
-                    keyword: "%#{@keyword}%"
+                    "parks.name LIKE :keyword OR prefectures.name LIKE :prefecture",
+                    keyword: "%#{@keyword}%",
+                    prefecture: "#{@keyword}%"
                     )
              else
                Park.none

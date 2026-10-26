@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!
   def index
     @favorite_parks = current_user.favorite_parks
+    @show_unfavorite_button = true
   end
 
   def create

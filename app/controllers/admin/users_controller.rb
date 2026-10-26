@@ -7,6 +7,8 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def show
+    @parks = @user.parks.order(created_at: :desc)
+    @communities = @user.communities.order(created_at: :desc)
   end
 
   def edit

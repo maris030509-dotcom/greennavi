@@ -1,3 +1,13 @@
+<!--コメント投稿のバリエーションメッセージ -->
+<% if @community_comment.errors.any? %>
+  <div class="alert alert-danger">
+    <ul class="mb-0">
+      <% @community_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <div class="container py-4">
 
   <div class="row justify-content-center">
