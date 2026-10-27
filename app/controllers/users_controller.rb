@@ -50,7 +50,10 @@ class UsersController < ApplicationController
   end
 
   def reject_guest_user
-    raise "reject_guest_user が呼ばれました"
+    if current_user.email == "guest@example.com"
+      redirect_to users_my_page_path,
+                  alert: "ゲストユーザーはプロフィールを編集できません。"
+    end
   end
 
   def user_params
