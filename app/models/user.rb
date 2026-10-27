@@ -25,6 +25,17 @@ class User < ApplicationRecord
     favorites.exists?(park_id: park.id)
   end
 
+  def self.guest
+    find_or_create_by!(email: "guest@example.com") do |user|
+      user.name = "ゲストユーザー"
+      user.prefecture_id = 1
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+  def guest_user?
+    email == "guest@example.com"
+  end
 
   validates :name, presence: true
   validates :prefecture_id, presence: true

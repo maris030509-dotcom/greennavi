@@ -3,7 +3,8 @@ class ParksController < ApplicationController
   before_action :set_park, only: [:show, :edit, :update, :destroy]
   before_action :set_master_data, only: [:new, :create, :edit, :update]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-  
+  before_action :reject_guest_user, only: [:new, :create]
+
   def index
     @parks = Park.order(created_at: :desc)
   end
@@ -57,6 +58,15 @@ class ParksController < ApplicationController
   def ensure_correct_user
     unless @park.user == current_user
       redirect_to parks_path, notice: "権限がありません"
+    end
+  end
+
+  def reject_guest_user
+    if current_user&.guest_user?
+      redirect_back(
+        fallback_location: root_path,
+        alert: "ゲストユーザーは閲覧のみ可能です"
+      )
     end
   end
 

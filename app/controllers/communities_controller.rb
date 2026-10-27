@@ -1,5 +1,7 @@
 class CommunitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :reject_guest_user, only: [:new, :create]
+
   
   def index
     @communities = Community.where(is_active: true)
@@ -33,6 +35,15 @@ class CommunitiesController < ApplicationController
   private
   def community_params
     params.require(:community).permit(:name, :introduction)
+  end
+
+  def reject_guest_user
+    if current_user&.guest_user?
+      redirect_back(
+        fallback_location: root_path,
+        alert: "ゲストユーザーは閲覧のみ可能です"
+      )
+    end
   end
 
 end
