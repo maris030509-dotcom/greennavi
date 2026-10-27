@@ -2,6 +2,7 @@ class ParkCommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_park
   before_action :set_park_comment, only: [:edit, :update, :destroy]
+  before_action :reject_guest_user, only: [:create]
 
   def create
     @park_comment = current_user.park_comments.build(park_comment_params)
@@ -45,6 +46,15 @@ class ParkCommentsController < ApplicationController
 
   def set_park_comment
     @park_comment = current_user.park_comments.find(params[:id])
+  end
+
+  def reject_guest_user
+    if current_user&.guest_user?
+      redirect_back(
+        fallback_location: root_path,
+        alert: "ゲストユーザーは閲覧のみ可能です"
+      )
+    end
   end
 
   def park_comment_params

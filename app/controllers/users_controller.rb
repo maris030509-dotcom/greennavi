@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_current_user, except: [:show, :favorites]
   before_action :set_user, only: [:show, :favorites]
-
+  before_action :reject_guest_user, only: [:edit, :update, :unsubscribe, :withdraw]
+  
   def my_page
     #新しい投稿順に表示
     @parks = @user.parks.order(created_at: :desc)
@@ -46,6 +47,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def reject_guest_user
+    raise "reject_guest_user が呼ばれました"
   end
 
   def user_params

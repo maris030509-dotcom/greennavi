@@ -27,7 +27,20 @@
       <div class="text-center">
         <%= f.submit "ログイン", class: "btn btn-success text-white px-4" %>
       </div>
+
+      <!--ゲストログインボタン -->
+      <div class="text-start mt-3">
+        <%= link_to "ゲストログイン",
+            users_guest_sign_in_path,
+            data: { turbo_method: :post },
+            class: "btn btn-outline-success px-4" %>
+      </div>
+      <p class="text-muted mt-2 small">
+        登録不要でサービスをお試しいただけます
+      </p>
+
     <% end %>
+  
     <h4>会員登録がお済みでない方</h4>
     <p><%= link_to "こちら","/users/sign_up" %>から新規登録を行ってください。</p>
   </div>
