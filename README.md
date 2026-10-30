@@ -22,13 +22,13 @@
   ・公園での過ごし方を探そうと思ったとき
 
 ## 設計書
-  後ほど作成予定
-​
+　　UIFlows、ER図、テーブル定義書、アプリケーション詳細設計書
+  https://drive.google.com/drive/u/0/folders/1sWPtwqiSLzFBY7LT_lN7mBujYgVeJX-3
+
 ## 開発環境
 - OS：Windows
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
+- フレームワーク：Ruby on Rails,Bootstrap
 - IDE：Visual Studio Code（VSCode）
 ​
 ## 使用素材
