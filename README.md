@@ -22,16 +22,16 @@
   ・公園での過ごし方を探そうと思ったとき
 
 ## 設計書
-  -UIFlows
-　ユーザー側
-　<img width="539" height="335" alt="image" src="https://github.com/user-attachments/assets/a18e75d0-6925-41a3-a7c4-20313f385973" />
+  -UIFlows<br>
+　ユーザー側<br>
+　<img width="539" height="335" alt="image" src="https://github.com/user-attachments/assets/a18e75d0-6925-41a3-a7c4-20313f385973" /><br>
 
-  管理者側
-  <img width="608" height="330" alt="image" src="https://github.com/user-attachments/assets/3365f7ed-4b81-43c0-83bd-aed355cac170" />
+  管理者側<br>
+  <img width="608" height="330" alt="image" src="https://github.com/user-attachments/assets/3365f7ed-4b81-43c0-83bd-aed355cac170" /><br>
 　
-  ‐ER図
-  <img width="300" height="347" alt="image" src="https://github.com/user-attachments/assets/2d7b1d4e-4dc4-4b56-8e9f-4b93f8cd5b61" />
-  UIFlows、ER図、テーブル定義書、アプリケーション詳細設計書を下記に格納しています。
+  ‐ER図<br>
+  <img width="300" height="347" alt="image" src="https://github.com/user-attachments/assets/2d7b1d4e-4dc4-4b56-8e9f-4b93f8cd5b61" /><br>
+  UIFlows、ER図、テーブル定義書、アプリケーション詳細設計書を下記に格納しています。<br>
   https://drive.google.com/drive/u/0/folders/1-m2n1Hy1M0fccMBivoAw1iGKAfMi7zAr
 
 ## 開発環境
