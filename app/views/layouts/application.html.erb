@@ -118,21 +118,6 @@
               </ul>
 
             <% end %>
-            <!--検索機能　公園名もしくは都道府県で絞り込み -->
-            <%= form_with url: search_path,
-                method: :get,
-                local: true,
-                class: "d-flex mt-3 mt-lg-0 ms-lg-3" do |f| %>
-
-              <%= f.text_field :keyword,
-                  value: params[:keyword],
-                  placeholder: "公園名/都道府県名を入力",
-                  class: "form-control me-2" %>
-
-              <%= f.submit "検索",
-                  class: "btn btn-success" %>
-
-            <% end %>
 
           </div>
 

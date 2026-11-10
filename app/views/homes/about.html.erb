@@ -7,48 +7,75 @@
       <br class="d-md-none">みんなの公園情報サイト
     </h4>
     <h6>”お気に入りの公園”を見つけよう</h6>
+    <!--検索機能　公園名もしくは都道府県で絞り込み -->
+    <div class="hero-search">
+      <%= form_with url: search_path,
+          method: :get,
+          local: true,
+          class: "d-flex mt-3 mt-lg-0 ms-lg-3" do |f| %>
+
+        <%= f.text_field :keyword,
+            value: params[:keyword],
+            placeholder: "公園名/都道府県名を入力",
+            class: "form-control me-2" %>
+
+        <%= f.submit "公園を探す",
+            class: "btn search-btn btn-success" %>
+
+      <% end %>
+    </div>
+
   </div>
 </div>
 <!--サイトの使い方 -->
 <div class="container my-5 how-to-container">
   <section class="how-to-section text-center py-4 mb-5">
-    <h3 class="mb-4 fw-bold section-title-line">-HOW TO USE-</h3>
-    <div class="row justify-content-center g-4">
 
-      <div class="col-12 col-sm-4">
-        <div class="how-to-card">
-          <div class="card-body">
-            <i class="fa-solid fa-magnifying-glass-location how-to-icon"></i>
-            <p class="card-text">公園を検索</p>
-          </div>
-        </div>
-      </div>
+    <h3 class="mb-4 fw-bold section-title-line">
+      -HOW TO USE-
+    </h3>
 
-      <div class="col-12 col-sm-4">
-        <div class="how-to-card">
-          <div class="card-body">
-            <i class="fa-solid fa-photo-film how-to-icon"></i>
-            <p class="card-text">写真や設備をチェック</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-4">
-        <div class="how-to-card">
-          <div class="card-body">
-            <i class="fa-solid fa-comments how-to-icon"></i>
-            <p class="card-text">コミュニティで情報交換</p>
-          </div>
-        </div>
-      </div>
-
+    <div id="how-to-assets"
+        data-search="<%= asset_path('search.svg') %>"
+        data-check="<%= asset_path('check.svg') %>"
+        data-community="<%= asset_path('community.svg') %>">
     </div>
+
+    <div class="how-to-wrapper">
+
+      <button id="prev-btn" class="arrow-btn">
+        ←
+      </button>
+
+      <div class="how-to-card">
+
+        <%= image_tag "search.svg",
+          id: "how-to-image",
+          class: "how-to-image",
+          alt: "公園を検索" %>
+
+        <h5 id="how-to-title">
+          公園を検索
+        </h5>
+        <p id="how-to-description">
+          気になる公園をみつけよう
+        </p>
+
+        <div class="step-indicator">
+          <span class="step-dot active"></span>
+          <span class="step-dot"></span>
+          <span class="step-dot"></span>
+      </div>
+    </div>
+    <button id="next-btn" class="arrow-btn">
+      →
+    </button>
   </section>
 
   <!--新着公園一覧　4つまで表示 -->
   <div class="d-flex justify-content-center align-items-center mb-4">
     <h3 class="mb-0 fw-bold section-title-line">
-      🌿-NEW-🌿
+      -NEW-
     </h3>
     <div class="ms-3">
       <%= link_to "すべて見る", parks_path, class: "btn btn-outline-success btn-sm rounded-pill px-3" %>
