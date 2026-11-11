@@ -60,7 +60,7 @@ a.header-button {
 
 .hero-section {
   position: relative;
-  height: 300px;
+  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,7 @@ a.header-button {
 }
 
 .hero-content {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255,255,255,0.5);
   border-radius: 12px;
   width: 80%;
   color: #2e7d32;
@@ -93,6 +93,19 @@ a.header-button {
 .hero-logo{
   width: 300px;
   margin-bottom: 16px;
+}
+
+.hero-search {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.form-control {
+  height: 48px;
+}
+
+.search-btn {
+  height: 48px;
 }
 
 .section-title-line {
@@ -117,31 +130,62 @@ a.header-button {
   max-width: 1000px;
 }
 
+.how-to-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 .how-to-card {
-  height: 100%;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 350px;
 }
 
-.how-to-icon {
-  font-size: 32px;
-  color: #198754;
-  margin-bottom: 16px;
+.how-to-image {
+  width: 100%;
+  max-width: 250px;
+  height: 200px;
+  object-fit: contain;
 }
 
-.how-to-card .card-text {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 0;
+.arrow-btn {
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  transition: all 0.3 ease;
+}
+
+.step-dot.active {
+  background-color: #198754;
+  transform: scale(1.2);
+}
 .park-card {
   height: 100%;
   background-color: white;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.park-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
 }
 
 .park-card-image {
@@ -189,6 +233,11 @@ a.header-button {
   height: 300px;
   object-fit: cover;
   border-radius: 16px;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
 }
 
 .community-introduction {
