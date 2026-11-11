@@ -10,7 +10,7 @@
     <div class="row g-4 justify-content-start mb-5">
       <% @parks.each do |park| %>
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+          <div class="card park-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
             
             <!-- 画像部分 -->
             <%= link_to park_path(park) do %>
